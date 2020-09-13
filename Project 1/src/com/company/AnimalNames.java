@@ -26,18 +26,20 @@ public class AnimalNames {
     }
 
     // Getters
-    private String GetRandomName(String sex) throws FileNotFoundException {
-        if ((sex == "M") || (sex == "Male")) {
-            this.MaleNames = ReadNames(this.MaleNamesPath);
+    public String GetRandomName(String sex) throws FileNotFoundException {
+        String name = "";
+        if (Objects.equals(sex, "M")) {
+            name = GetRandomNameHelper(this.MaleNames);
         }
-        else if ((sex == "F") || (sex == "Female")) {
-            this.FemaleNames = ReadNames(this.FemaleNamesPath);
+        else if (Objects.equals(sex, "F")) {
+            name = GetRandomNameHelper(this.FemaleNames);
         }
-        return;
+        return name;
     }
 
     private String GetRandomNameHelper(List<String> names) {
-
+        String name = names.get(this.rand.nextInt(names.size()));
+        return name;
     }
 
     // Other Functions
