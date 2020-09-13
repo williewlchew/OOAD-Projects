@@ -12,7 +12,7 @@ public class AnimalNames {
     // Variables
     private String MaleNamesPath;
     private String FemaleNamesPath;
-    private List<String> MaleNames = new ArrayList<String>();
+    private List<String> MaleNames = new ArrayList<>();
     private List<String> FemaleNames = new ArrayList<String>();
     private static Random rand = new Random();
 
