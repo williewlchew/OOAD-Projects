@@ -4,7 +4,7 @@ import glob
 
 if __name__ == "__main__":
     '''
-    This function reads all of the files and aggregates them into a dataframe.
+    This file reads all of the files and aggregates them into a dataframe.
     The unique names for male and females are found, and then split into different files
     based on M and F. Each file is alphabetically organized.
     '''
@@ -16,6 +16,7 @@ if __name__ == "__main__":
     for fn in all_name_files:
         df = pd.read_csv(fn, index_col=None, header=None)
         li.append(df)
+
     main_names = pd.concat(li, axis=0, ignore_index=True)
 
     main_names.drop([2], axis=1, inplace=True)
