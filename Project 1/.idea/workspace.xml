@@ -20,8 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bfe88ba-e078-4d19-a17e-e9fa2dcdbbc0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/Animal_Names.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Animal_Names.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AnimalNames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +63,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -73,7 +79,7 @@
       <updated>1599961771693</updated>
       <workItem from="1599961775358" duration="1175000" />
       <workItem from="1599968756267" duration="125000" />
-      <workItem from="1599968893623" duration="3552000" />
+      <workItem from="1599968893623" duration="5317000" />
     </task>
     <servers />
   </component>
@@ -93,10 +99,30 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="1399" height="783" key="GridCell.Tab.0.bottom" timestamp="1599974245082">
+      <screen x="-1440" y="-516" width="1440" height="2560" />
+    </state>
+    <state width="1399" height="783" key="GridCell.Tab.0.bottom/0.0.2560.1440/-1440.-516.1440.2560@-1440.-516.1440.2560" timestamp="1599974245082" />
+    <state width="1399" height="783" key="GridCell.Tab.0.center" timestamp="1599974245082">
+      <screen x="-1440" y="-516" width="1440" height="2560" />
+    </state>
+    <state width="1399" height="783" key="GridCell.Tab.0.center/0.0.2560.1440/-1440.-516.1440.2560@-1440.-516.1440.2560" timestamp="1599974245082" />
+    <state width="1399" height="783" key="GridCell.Tab.0.left" timestamp="1599974245082">
+      <screen x="-1440" y="-516" width="1440" height="2560" />
+    </state>
+    <state width="1399" height="783" key="GridCell.Tab.0.left/0.0.2560.1440/-1440.-516.1440.2560@-1440.-516.1440.2560" timestamp="1599974245082" />
+    <state width="1399" height="783" key="GridCell.Tab.0.right" timestamp="1599974245082">
+      <screen x="-1440" y="-516" width="1440" height="2560" />
+    </state>
+    <state width="1399" height="783" key="GridCell.Tab.0.right/0.0.2560.1440/-1440.-516.1440.2560@-1440.-516.1440.2560" timestamp="1599974245082" />
     <state x="609" y="341" key="SettingsEditor" timestamp="1599962182282">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="609" y="341" key="SettingsEditor/0.0.2560.1440/-1440.-516.1440.2560@0.0.2560.1440" timestamp="1599962182282" />
+    <state x="-938" y="677" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599973902497">
+      <screen x="-1440" y="-516" width="1440" height="2560" />
+    </state>
+    <state x="-938" y="677" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1440/-1440.-516.1440.2560@-1440.-516.1440.2560" timestamp="1599973902497" />
     <state x="963" y="330" width="634" height="780" key="find.popup" timestamp="1599970698692">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
