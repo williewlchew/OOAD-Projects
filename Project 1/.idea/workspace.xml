@@ -20,20 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bfe88ba-e078-4d19-a17e-e9fa2dcdbbc0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project 1/com/company/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Animal_Names.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="JupyterTrust" id="08e3b4a0-964e-44f5-b7a3-62e2a3bee0e2" />
   <component name="ProjectId" id="1hR6tHaSMfxjGewns2OroYwPwlz" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -63,6 +72,8 @@
       <option name="presentableId" value="Default" />
       <updated>1599961771693</updated>
       <workItem from="1599961775358" duration="1175000" />
+      <workItem from="1599968756267" duration="125000" />
+      <workItem from="1599968893623" duration="3552000" />
     </task>
     <servers />
   </component>
@@ -79,11 +90,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="609" y="341" key="SettingsEditor" timestamp="1599962182282">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="609" y="341" key="SettingsEditor/0.0.2560.1440/-1440.-516.1440.2560@0.0.2560.1440" timestamp="1599962182282" />
+    <state x="963" y="330" width="634" height="780" key="find.popup" timestamp="1599970698692">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="963" y="330" width="634" height="780" key="find.popup/0.0.2560.1440/-1440.-516.1440.2560@0.0.2560.1440" timestamp="1599970698692" />
   </component>
 </project>
