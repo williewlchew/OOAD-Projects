@@ -19,7 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bfe88ba-e078-4d19-a17e-e9fa2dcdbbc0" name="Default Changelist" comment="new git ignore test 3">
+    <list default="true" id="8bfe88ba-e078-4d19-a17e-e9fa2dcdbbc0" name="Default Changelist" comment="new git ignore test 5">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Zoo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +93,7 @@
       <workItem from="1600015698498" duration="3906000" />
       <workItem from="1600041971008" duration="2331000" />
       <workItem from="1600048854949" duration="5009000" />
-      <workItem from="1600100399829" duration="11436000" />
+      <workItem from="1600100399829" duration="11504000" />
     </task>
     <task id="LOCAL-00001" summary="Minor adjustments">
       <created>1600107419724</created>
@@ -143,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600123263454</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="new git ignore test 5">
+      <created>1600123306443</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1600123306443</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +177,8 @@
     <MESSAGE value="new git ignore test" />
     <MESSAGE value="new git ignore test 2" />
     <MESSAGE value="new git ignore test 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="new git ignore test 3" />
+    <MESSAGE value="new git ignore test 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="new git ignore test 5" />
   </component>
   <component name="WindowStateProjectService">
     <state x="249" y="0" key="#Project_Structure" timestamp="1600020901836">
@@ -224,10 +233,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="609" y="341" key="SettingsEditor/0.0.2560.1440/-1440.-516.1440.2560@0.0.2560.1440" timestamp="1599962182282" />
-    <state x="-1128" y="496" key="Vcs.Push.Dialog.v2" timestamp="1600123282612">
+    <state x="-1128" y="496" key="Vcs.Push.Dialog.v2" timestamp="1600123309950">
       <screen x="-1440" y="-516" width="1440" height="2560" />
     </state>
-    <state x="-1128" y="496" key="Vcs.Push.Dialog.v2/0.0.2560.1440/-1440.-516.1440.2560@-1440.-516.1440.2560" timestamp="1600123282612" />
+    <state x="-1128" y="496" key="Vcs.Push.Dialog.v2/0.0.2560.1440/-1440.-516.1440.2560@-1440.-516.1440.2560" timestamp="1600123309950" />
     <state x="-1129" y="656" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1600050427384">
       <screen x="-1440" y="-516" width="1440" height="2560" />
     </state>
