@@ -23,6 +23,7 @@ public abstract class Animal {
 
 
 
+
     // Setters
     protected void SetName(String FirstChar, AnimalNames names) throws FileNotFoundException {
         this.name = names.GetRandomName(FirstChar, this.sex);
@@ -55,7 +56,9 @@ public abstract class Animal {
     }
 
     public String Eat(){
-        return null;
+        String eat_str = "";
+        eat_str = this.GetName() + " the " + this.GetSpecies() + " has eaten.";
+        return eat_str;
 
     }
 

@@ -14,7 +14,6 @@ public class Main {
         names.SetMaleNamesPath("data/names/animal_names_M.csv");
         names.SetFemaleNamesPath("data/names/animal_names_F.csv");
 
-
         names.SetNames("M");
         names.SetNames("F");
 
@@ -22,11 +21,17 @@ public class Main {
         Hippo hippo2 = new Hippo("F", names);
 
 
+
         System.out.println(hippo1.GetName());
         System.out.println(hippo1.GetSpecies());
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println(hippo1.Roam());
+            System.out.println(hippo2.Roam());
+        }
+
         System.out.println(hippo2.GetName());
         System.out.println(hippo2.GetSpecies());
-
 
         System.out.println(zoo.SimulateDays(7));
 

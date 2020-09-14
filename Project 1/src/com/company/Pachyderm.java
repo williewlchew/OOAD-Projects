@@ -10,10 +10,9 @@ public abstract class Pachyderm extends Animal {
     }
 
     public String Charge() {
-        String charge_str = super.GetName() + " the " + super.GetSpecies() + "has charged.";
+        String charge_str = super.GetName() + " the " + super.GetSpecies() + " has charged.";
         return charge_str;
     }
-
 
     @Override
     public String Roam() {
@@ -25,7 +24,7 @@ public abstract class Pachyderm extends Animal {
             output_str = this.Charge();
         }
         else {
-            output_str = super.GetName() + " the " + super.GetSpecies() + "has roamed / exercised.";
+            output_str = super.GetName() + " the " + super.GetSpecies() + " has roamed / exercised.";
         }
         return output_str;
     }
@@ -59,7 +58,7 @@ class Elephant extends Pachyderm {
     Elephant(String _sex, AnimalNames names) throws FileNotFoundException   {
         super(_sex, names);
         this.SetSpecies("Elephant");
-        this.SetName("H", names);
+        this.SetName("E", names);
     }
 
     @Override
