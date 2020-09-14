@@ -58,7 +58,7 @@ class Elephant extends Pachyderm {
     Elephant(String _sex, AnimalNames names) throws FileNotFoundException   {
         super(_sex, names);
         this.SetSpecies("Elephant");
-        this.SetName("H", names);
+        this.SetName("E", names);
     }
 
     @Override
