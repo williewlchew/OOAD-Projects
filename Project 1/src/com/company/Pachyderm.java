@@ -10,24 +10,27 @@ public abstract class Pachyderm extends Animal {
     }
 
     public String Charge() {
-        return null;
+        String charge_str = super.GetName() + " the " + super.GetSpecies() + "has charged.";
+        return charge_str;
     }
 
 
     @Override
     public String Roam() {
 
-        float prob  = rand.nextFloat();
+        float prob = rand.nextFloat();
+        String output_str = "";
 
         if (prob < 0.25f) {
-            this.Charge();
+            output_str = this.Charge();
         }
         else {
-            return super.Roam();
+            output_str = super.GetName() + " the " + super.GetSpecies() + "has roamed / exercised.";
         }
-        return null;
+        return output_str;
     }
 }
+
 
 
 class Hippo extends Pachyderm {
@@ -37,6 +40,46 @@ class Hippo extends Pachyderm {
         this.SetSpecies("Hippo");
         this.SetName("H", names);
 
+    }
+
+    @Override
+    protected void SetName(String FirstChar, AnimalNames names) throws FileNotFoundException {
+        super.SetName(FirstChar, names);
+    }
+
+    @Override
+    protected void SetSpecies(String _species) {
+        super.SetSpecies(_species);
+    }
+}
+
+
+
+class Elephant extends Pachyderm {
+    Elephant(String _sex, AnimalNames names) throws FileNotFoundException   {
+        super(_sex, names);
+        this.SetSpecies("Elephant");
+        this.SetName("H", names);
+    }
+
+    @Override
+    protected void SetName(String FirstChar, AnimalNames names) throws FileNotFoundException {
+        super.SetName(FirstChar, names);
+    }
+
+    @Override
+    protected void SetSpecies(String _species) {
+        super.SetSpecies(_species);
+    }
+}
+
+
+
+class Rhino extends Pachyderm {
+    Rhino(String _sex, AnimalNames names) throws FileNotFoundException   {
+        super(_sex, names);
+        this.SetSpecies("Rhino");
+        this.SetName("R", names);
     }
 
     @Override
