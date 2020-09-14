@@ -16,13 +16,13 @@ public class Zoo {
     // Methods
     public String SimulateDays(int days){
 
-        String buffer = "";
+        StringBuilder buffer = new StringBuilder();
 
         for(int day = 0; day < days; day++){
-            buffer = buffer + keeper.Arrive();
-            buffer = buffer + keeper.Leave();
+            buffer.append(keeper.Arrive());
+            buffer.append(keeper.Leave());
         }
 
-        return buffer;
+        return buffer.toString();
     }
 }

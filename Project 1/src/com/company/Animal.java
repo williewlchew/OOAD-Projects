@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 
 public abstract class Animal {
 
+    // Constructor
     Animal(String _sex, AnimalNames names) throws FileNotFoundException {
 
         this.sex = _sex;
@@ -17,18 +18,22 @@ public abstract class Animal {
     private String sex;
 
 
-    // Functions that get overridden
-    public String MakeNoise() {
-        return null;
-    }
+
 
     // Setters
-    public void SetName(String FirstChar, AnimalNames names) throws FileNotFoundException {
+    protected void SetName(String FirstChar, AnimalNames names) throws FileNotFoundException {
         this.name = names.GetRandomName(FirstChar, this.sex);
     }
 
-    public void SetSpecies(String _species) {
+    protected void SetSpecies(String _species) {
         this.species = _species;
+    }
+
+
+    // Actions
+    public String MakeNoise() {
+        return null;
+
     }
 
     public String Roam(){
@@ -51,12 +56,18 @@ public abstract class Animal {
 
     }
 
+    public String Exercise(){
+        return null;
+    }
+
     // Getters
     public String GetName(){
         return(this.name);
+
     }
     public String GetSpecies() {
         return(this.species);
+
     }
 
 
