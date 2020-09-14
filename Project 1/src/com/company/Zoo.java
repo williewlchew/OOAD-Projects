@@ -13,6 +13,9 @@ public class Zoo {
         keeper = new Zookeeper();
     }
 
+    // Initialization Methods
+    public void
+
     // Methods
     public String SimulateDays(int days){
 
@@ -20,9 +23,14 @@ public class Zoo {
 
         for(int day = 0; day < days; day++){
             buffer.append(keeper.Arrive());
+
             buffer.append(keeper.Leave());
         }
 
         return buffer.toString();
     }
+
+    public String ZooKeeping(){
+        keeper.
+    };
 }

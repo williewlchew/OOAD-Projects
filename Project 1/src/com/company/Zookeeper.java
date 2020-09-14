@@ -23,7 +23,8 @@ public class Zookeeper extends ZooEmployee {
 
     // Zookeeping Methods
     public String Wake(Animal animal){
-        return("Testing\n");
+        String buffer = "Zookeeper " + name + " feeds" + animal.GetName() +".\n";
+        return(buffer + animal.Eat());
     }
 
     public String RollCall(){
