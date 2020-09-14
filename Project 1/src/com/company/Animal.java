@@ -11,6 +11,7 @@ public abstract class Animal {
     }
 
     // Variables
+    private String species = "";
     private String name = "";
     private boolean asleep = false;
     private String sex;
@@ -21,8 +22,13 @@ public abstract class Animal {
         return null;
     }
 
+    // Setters
     public void SetName(String FirstChar, AnimalNames names) throws FileNotFoundException {
         this.name = names.GetRandomName(FirstChar, this.sex);
+    }
+
+    public void SetSpecies(String _species) {
+        this.species = _species;
     }
 
     public String Roam(){
@@ -46,8 +52,11 @@ public abstract class Animal {
     }
 
     // Getters
-    public void GetName(){
-        System.out.println(this.name);
+    public String GetName(){
+        return(this.name);
+    }
+    public String GetSpecies() {
+        return(this.species);
     }
 
 

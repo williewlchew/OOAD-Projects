@@ -15,11 +15,18 @@ class Hippo extends Pachydem {
 
     Hippo(String _sex, AnimalNames names) throws FileNotFoundException {
         super(_sex, names);
+        this.SetSpecies("Hippo");
         this.SetName("H", names);
+
     }
 
     @Override
     public void SetName(String FirstChar, AnimalNames names) throws FileNotFoundException {
         super.SetName("H", names);
+    }
+
+    @Override
+    public void SetSpecies(String _species) {
+        super.SetSpecies(_species);
     }
 }

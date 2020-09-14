@@ -19,6 +19,10 @@ public class Main {
         names.SetNames("F");
 
         Hippo hippo1 = new Hippo("M", names);
+        System.out.println(hippo1.GetName());
+        System.out.println(hippo1.GetSpecies());
+
+
 
         System.out.println(zoo.SimulateDays(7));
 
