@@ -13,14 +13,19 @@ public abstract class Pachyderm extends Animal {
         return null;
     }
 
-    @Override
-    public String Exercise() {
-        return super.Exercise();
-    }
 
     @Override
     public String Roam() {
-        return super.Roam();
+
+        float prob  = rand.nextFloat();
+
+        if (prob < 0.25f) {
+            this.Charge();
+        }
+        else {
+            return super.Roam();
+        }
+        return null;
     }
 }
 

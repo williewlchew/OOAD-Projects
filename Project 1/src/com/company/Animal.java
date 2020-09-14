@@ -1,8 +1,10 @@
 package com.company;
 
 import java.io.FileNotFoundException;
+import java.util.Random;
 
 public abstract class Animal {
+
 
     // Constructor
     Animal(String _sex, AnimalNames names) throws FileNotFoundException {
@@ -16,6 +18,7 @@ public abstract class Animal {
     private String name = "";
     private boolean asleep = false;
     private String sex;
+    protected static Random rand = new Random();
 
 
 
@@ -56,9 +59,6 @@ public abstract class Animal {
 
     }
 
-    public String Exercise(){
-        return null;
-    }
 
     // Getters
     public String GetName(){
