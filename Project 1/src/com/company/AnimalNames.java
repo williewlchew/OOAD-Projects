@@ -3,6 +3,7 @@ package com.company;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.Objects;
 import java.util.Random;
 
@@ -12,7 +13,7 @@ public class AnimalNames {
     // Variables
     private String MaleNamesPath;
     private String FemaleNamesPath;
-    private List<String> MaleNames = new ArrayList<>();
+    private List<String> MaleNames = new ArrayList<String>();
     private List<String> FemaleNames = new ArrayList<String>();
     private static Random rand = new Random();
 
@@ -26,19 +27,23 @@ public class AnimalNames {
     }
 
     // Getters
-    public String GetRandomName(String sex) throws FileNotFoundException {
+    public String GetRandomName(String FirstChar, String sex) throws FileNotFoundException {
         String name = "";
         if (Objects.equals(sex, "M")) {
-            name = GetRandomNameHelper(this.MaleNames);
+            name = GetRandomNameHelper(FirstChar, this.MaleNames);
         }
         else if (Objects.equals(sex, "F")) {
-            name = GetRandomNameHelper(this.FemaleNames);
+            name = GetRandomNameHelper(FirstChar, this.FemaleNames);
         }
         return name;
     }
 
-    private String GetRandomNameHelper(List<String> names) {
-        String name = names.get(this.rand.nextInt(names.size()));
+    private String GetRandomNameHelper(String FirstChar, List<String> names) {
+
+        // https://beginnersbook.com/2017/10/java-8-stream-filter/
+        List<String> FirstCharNames = names.stream().filter(str -> str.startsWith(FirstChar)).collect(Collectors.toList());
+
+        String name = FirstCharNames.get(this.rand.nextInt(FirstCharNames.size()));
         return name;
     }
 
