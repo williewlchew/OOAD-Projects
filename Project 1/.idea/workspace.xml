@@ -19,14 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bfe88ba-e078-4d19-a17e-e9fa2dcdbbc0" name="Default Changelist" comment="Implemented the override for Pachyderm and hippos, rhinos, and elephants">
+    <list default="true" id="8bfe88ba-e078-4d19-a17e-e9fa2dcdbbc0" name="Default Changelist" comment="new git ignore test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project 1/com/company/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project 1/com/company/Animal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project 1/com/company/Hippo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project 1/com/company/Hippo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project 1/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project 1/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Pachyderm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Pachyderm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +92,7 @@
       <workItem from="1600015698498" duration="3906000" />
       <workItem from="1600041971008" duration="2331000" />
       <workItem from="1600048854949" duration="5009000" />
-      <workItem from="1600100399829" duration="10810000" />
+      <workItem from="1600100399829" duration="11313000" />
     </task>
     <task id="LOCAL-00001" summary="Minor adjustments">
       <created>1600107419724</created>
@@ -121,7 +115,21 @@
       <option name="project" value="LOCAL" />
       <updated>1600120825511</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="adding some strings to return that specify the actions of the animals in the zoo. Added stuff to the .gitignore to make merging feasible.">
+      <created>1600122757274</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1600122757274</updated>
+    </task>
+    <task id="LOCAL-00005" summary="new git ignore test">
+      <created>1600123157407</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1600123157407</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,7 +151,9 @@
     <MESSAGE value="Minor adjustments" />
     <MESSAGE value="Added Exercise / Roam Override for the Pachyderm class." />
     <MESSAGE value="Implemented the override for Pachyderm and hippos, rhinos, and elephants" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented the override for Pachyderm and hippos, rhinos, and elephants" />
+    <MESSAGE value="adding some strings to return that specify the actions of the animals in the zoo. Added stuff to the .gitignore to make merging feasible." />
+    <MESSAGE value="new git ignore test" />
+    <option name="LAST_COMMIT_MESSAGE" value="new git ignore test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="249" y="0" key="#Project_Structure" timestamp="1600020901836">
@@ -158,26 +168,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600020900697" />
-    <state width="1399" height="498" key="GridCell.Tab.0.bottom" timestamp="1600121442075">
+    <state width="1399" height="498" key="GridCell.Tab.0.bottom" timestamp="1600122705617">
       <screen x="-1440" y="-516" width="1440" height="2560" />
     </state>
     <state width="724" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600026393121" />
-    <state width="1399" height="498" key="GridCell.Tab.0.bottom/0.0.2560.1440/-1440.-516.1440.2560@-1440.-516.1440.2560" timestamp="1600121442075" />
-    <state width="1399" height="498" key="GridCell.Tab.0.center" timestamp="1600121442075">
+    <state width="1399" height="498" key="GridCell.Tab.0.bottom/0.0.2560.1440/-1440.-516.1440.2560@-1440.-516.1440.2560" timestamp="1600122705617" />
+    <state width="1399" height="498" key="GridCell.Tab.0.center" timestamp="1600122705617">
       <screen x="-1440" y="-516" width="1440" height="2560" />
     </state>
     <state width="724" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600026393121" />
-    <state width="1399" height="498" key="GridCell.Tab.0.center/0.0.2560.1440/-1440.-516.1440.2560@-1440.-516.1440.2560" timestamp="1600121442075" />
-    <state width="1399" height="498" key="GridCell.Tab.0.left" timestamp="1600121442075">
+    <state width="1399" height="498" key="GridCell.Tab.0.center/0.0.2560.1440/-1440.-516.1440.2560@-1440.-516.1440.2560" timestamp="1600122705617" />
+    <state width="1399" height="498" key="GridCell.Tab.0.left" timestamp="1600122705617">
       <screen x="-1440" y="-516" width="1440" height="2560" />
     </state>
     <state width="724" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600026393120" />
-    <state width="1399" height="498" key="GridCell.Tab.0.left/0.0.2560.1440/-1440.-516.1440.2560@-1440.-516.1440.2560" timestamp="1600121442075" />
-    <state width="1399" height="498" key="GridCell.Tab.0.right" timestamp="1600121442075">
+    <state width="1399" height="498" key="GridCell.Tab.0.left/0.0.2560.1440/-1440.-516.1440.2560@-1440.-516.1440.2560" timestamp="1600122705617" />
+    <state width="1399" height="498" key="GridCell.Tab.0.right" timestamp="1600122705617">
       <screen x="-1440" y="-516" width="1440" height="2560" />
     </state>
     <state width="724" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600026393121" />
-    <state width="1399" height="498" key="GridCell.Tab.0.right/0.0.2560.1440/-1440.-516.1440.2560@-1440.-516.1440.2560" timestamp="1600121442075" />
+    <state width="1399" height="498" key="GridCell.Tab.0.right/0.0.2560.1440/-1440.-516.1440.2560@-1440.-516.1440.2560" timestamp="1600122705617" />
     <state width="1399" height="956" key="GridCell.Tab.1.bottom" timestamp="1600121384091">
       <screen x="-1440" y="-516" width="1440" height="2560" />
     </state>
@@ -198,10 +208,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="609" y="341" key="SettingsEditor/0.0.2560.1440/-1440.-516.1440.2560@0.0.2560.1440" timestamp="1599962182282" />
-    <state x="-1128" y="496" key="Vcs.Push.Dialog.v2" timestamp="1600120828251">
+    <state x="-1128" y="496" key="Vcs.Push.Dialog.v2" timestamp="1600123159265">
       <screen x="-1440" y="-516" width="1440" height="2560" />
     </state>
-    <state x="-1128" y="496" key="Vcs.Push.Dialog.v2/0.0.2560.1440/-1440.-516.1440.2560@-1440.-516.1440.2560" timestamp="1600120828251" />
+    <state x="-1128" y="496" key="Vcs.Push.Dialog.v2/0.0.2560.1440/-1440.-516.1440.2560@-1440.-516.1440.2560" timestamp="1600123159265" />
     <state x="-1129" y="656" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1600050427384">
       <screen x="-1440" y="-516" width="1440" height="2560" />
     </state>
