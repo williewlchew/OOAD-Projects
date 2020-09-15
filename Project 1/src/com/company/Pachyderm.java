@@ -10,7 +10,7 @@ public abstract class Pachyderm extends Animal {
     }
 
     public String Charge() {
-        String charge_str = super.GetName() + " the " + super.GetSpecies() + " has charged.";
+        String charge_str = super.GetName() + " the " + super.GetSpecies() + " has charged.\n";
         return charge_str;
     }
 
@@ -24,7 +24,7 @@ public abstract class Pachyderm extends Animal {
             output_str = this.Charge();
         }
         else {
-            output_str = super.GetName() + " the " + super.GetSpecies() + " has roamed / exercised.";
+            output_str = super.GetName() + " the " + super.GetSpecies() + " has roamed / exercised.\n ";
         }
         return output_str;
     }
@@ -36,19 +36,9 @@ class Hippo extends Pachyderm {
 
     Hippo(String _sex, AnimalNames names) throws FileNotFoundException {
         super(_sex, names);
-        this.SetSpecies("Hippo");
-        this.SetName("H", names);
+        super.SetSpecies("Hippo");
+        super.SetName("H", names);
 
-    }
-
-    @Override
-    protected void SetName(String FirstChar, AnimalNames names) throws FileNotFoundException {
-        super.SetName(FirstChar, names);
-    }
-
-    @Override
-    protected void SetSpecies(String _species) {
-        super.SetSpecies(_species);
     }
 }
 
@@ -57,18 +47,8 @@ class Hippo extends Pachyderm {
 class Elephant extends Pachyderm {
     Elephant(String _sex, AnimalNames names) throws FileNotFoundException   {
         super(_sex, names);
-        this.SetSpecies("Elephant");
-        this.SetName("E", names);
-    }
-
-    @Override
-    protected void SetName(String FirstChar, AnimalNames names) throws FileNotFoundException {
-        super.SetName(FirstChar, names);
-    }
-
-    @Override
-    protected void SetSpecies(String _species) {
-        super.SetSpecies(_species);
+        super.SetSpecies("Elephant");
+        super.SetName("E", names);
     }
 }
 
@@ -77,17 +57,8 @@ class Elephant extends Pachyderm {
 class Rhino extends Pachyderm {
     Rhino(String _sex, AnimalNames names) throws FileNotFoundException   {
         super(_sex, names);
-        this.SetSpecies("Rhino");
-        this.SetName("R", names);
+        super.SetSpecies("Rhino");
+        super.SetName("R", names);
     }
 
-    @Override
-    protected void SetName(String FirstChar, AnimalNames names) throws FileNotFoundException {
-        super.SetName(FirstChar, names);
-    }
-
-    @Override
-    protected void SetSpecies(String _species) {
-        super.SetSpecies(_species);
-    }
 }

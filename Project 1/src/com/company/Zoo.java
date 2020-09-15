@@ -9,6 +9,7 @@ public class Zoo {
     AnimalNames names = new AnimalNames();
     private Animal[] animals;
     private Zookeeper keeper;
+    private static Random rand = new Random();
 
     // Constructor
     public Zoo() throws FileNotFoundException{
@@ -23,12 +24,10 @@ public class Zoo {
     public void InitAnimals() throws FileNotFoundException {
         int[] speciesCounts = {0,0,0,0,0,0,0,0,0,0};
         int animalsCounts = 0;
-        int rnd;
         for(int speciesCount : speciesCounts){
-            rnd = new Random().nextInt(3);
-            speciesCount = 2 + rnd;
+            speciesCount = 2 + rand.nextInt(3);
             animalsCounts += speciesCount;
-        };
+        }
 
         animals = new Animal[animalsCounts];
         int animalIndex = 0;
@@ -43,40 +42,21 @@ public class Zoo {
     public Animal InitAnimal(int x) throws FileNotFoundException {
         String[] sexes = {"M", "F"};
         int rnd = new Random().nextInt(sexes.length);
-        switch (x){
-            case 1:
-                return(new Hippo(sexes[rnd], names));
-                break;
-            case 2:
-                return(new Elephant(sexes[rnd], names));
-                break;
-            case 3:
-                return(new Rhino(sexes[rnd], names));
-                break;
-            case 4:
-                return(new Cat(sexes[rnd], names));
-                break;
-            case 5:
-                return(new Lion(sexes[rnd], names));
-                break;
-            case 6:
-                return(new Tiger(sexes[rnd], names));
-                break;
-            case 7:
-                return(new Wolf(sexes[rnd], names));
-                break;
-            case 8:
-                return(new Dog(sexes[rnd], names));
-                break;
-            case 9:
-                return(new BrownBear(sexes[rnd], names));
-                break;
-            case 10:
-                return(new SunBear(sexes[rnd], names));
-            break;
-        }
+        return switch (x) {
+            case 1 -> (new Hippo(sexes[rnd], names));
+            case 2 -> (new Elephant(sexes[rnd], names));
+            case 3 -> (new Rhino(sexes[rnd], names));
+            case 4 -> (new Cat(sexes[rnd], names));
+            case 5 -> (new Lion(sexes[rnd], names));
+            case 6 -> (new Tiger(sexes[rnd], names));
+            case 7 -> (new Wolf(sexes[rnd], names));
+            case 8 -> (new Dog(sexes[rnd], names));
+            case 9 -> (new BrownBear(sexes[rnd], names));
+            case 10 -> (new SunBear(sexes[rnd], names));
+            default -> throw new IllegalStateException("Unexpected value: " + x);
+        };
 
-        return(new Hippo(sexes[rnd], names)); // should never get here
+        // should never get here
     }
 
     // Methods
@@ -111,5 +91,5 @@ public class Zoo {
             buffer.append(keeper.Sleep(a));
         }
         return buffer.toString();
-    };
+    }
 }
