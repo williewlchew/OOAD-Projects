@@ -27,7 +27,7 @@ public class AnimalNames {
     }
 
     // Getters
-    public String GetRandomName(String FirstChar, String sex) throws FileNotFoundException {
+    public String GetRandomName(String FirstChar, String sex) {
         String name = "";
         if (Objects.equals(sex, "M")) {
             name = GetRandomNameHelper(FirstChar, this.MaleNames);
@@ -48,7 +48,7 @@ public class AnimalNames {
     }
 
     // Other Functions
-    private static List<String> ReadNames(String file_path) throws FileNotFoundException {
+    private static List<String> ReadNames(String file_path) {
 
         List<String> names = new ArrayList<String>();
         String line;
