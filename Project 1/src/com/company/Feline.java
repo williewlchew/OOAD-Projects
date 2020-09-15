@@ -14,6 +14,7 @@ class Cat extends Feline {
         super(_sex, names);
         super.SetSpecies("Cat");
         super.SetName("C", names);
+        super.SetNoise("meows");
     }
 }
 
@@ -23,6 +24,7 @@ class Lion extends Feline {
         super(_sex, names);
         super.SetSpecies("Lion");
         super.SetName("L", names);
+        super.SetNoise("roars");
     }
 }
 
@@ -31,5 +33,6 @@ class Tiger extends Feline {
         super(_sex, names);
         super.SetSpecies("Tiger");
         super.SetName("T", names);
+        super.SetNoise("purrs");
     }
 }

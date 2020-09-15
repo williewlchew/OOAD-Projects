@@ -38,6 +38,7 @@ class Hippo extends Pachyderm {
         super(_sex, names);
         super.SetSpecies("Hippo");
         super.SetName("H", names);
+        super.SetNoise("growns");
 
     }
 }
@@ -49,6 +50,7 @@ class Elephant extends Pachyderm {
         super(_sex, names);
         super.SetSpecies("Elephant");
         super.SetName("E", names);
+        super.SetNoise("trumpets");
     }
 }
 
@@ -59,6 +61,7 @@ class Rhino extends Pachyderm {
         super(_sex, names);
         super.SetSpecies("Rhino");
         super.SetName("R", names);
+        super.SetNoise("growls");
     }
 
 }

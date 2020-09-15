@@ -14,6 +14,7 @@ class BrownBear extends Pachyderm {
         super(_sex, names);
         super.SetSpecies("Brown Bear");
         super.SetName("B", names);
+        super.SetNoise("growels");
     }
 
 }
@@ -23,6 +24,7 @@ class SunBear extends Pachyderm {
         super(_sex, names);
         super.SetSpecies("Sun Bear");
         super.SetName("S", names);
+        super.SetNoise("roars aggressively");
     }
 
 }

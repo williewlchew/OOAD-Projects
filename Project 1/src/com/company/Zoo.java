@@ -32,7 +32,7 @@ public class Zoo {
         animals = new Animal[animalsCounts];
         int animalIndex = 0;
         for (int i = 0; i < 10; i++){
-            for(int j = 0; j < i; j++){
+            for(int j = 0; j < speciesCounts[i]; j++){
                 animals[animalIndex] = InitAnimal(i);
                 animalIndex++;
             }

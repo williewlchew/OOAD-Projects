@@ -16,9 +16,10 @@ public abstract class Animal {
     // Variables
     private String species = "";
     private String name = "";
-    private boolean asleep = false;
+    private boolean asleep = true;
     private String sex;
     protected static Random rand = new Random();
+    private String noise = "";
 
 
 
@@ -32,11 +33,15 @@ public abstract class Animal {
     protected void SetSpecies(String _species) {
         this.species = _species;
     }
-
+    protected  void SetNoise(String _noise){
+        this.noise = _noise;
+    }
 
     // Actions
     public String MakeNoise() {
-        return null;
+        String noise_str = "";
+        noise_str = this.name + " the "  + this.species + " " + this.noise + ".\n";
+        return noise_str;
 
     }
 
@@ -46,18 +51,33 @@ public abstract class Animal {
     }
 
     public String Sleep(){
-        return null;
-
+        String sleep_str = "";
+        if (this.asleep) {
+            sleep_str =  this.name + " the " + this.species + " is already asleep.\n";
+        }
+        else {
+            sleep_str = this.name + " the "  + this.species + " slumbers.\n";
+            this.asleep = true;
+        }
+        return sleep_str;
     }
 
     public String WakeUp(){
-        return null;
+        String awake_str = "";
+        if (this.asleep) {
+            awake_str = this.name + " the " + this.species + " has woken up.\n";
+            this.asleep = false;
+        }
+        else {
+            awake_str = this.name + " the " + this.species + " is already awake.\n";
+        }
+        return awake_str;
 
     }
 
     public String Eat(){
         String eat_str = "";
-        eat_str = this.GetName() + " the " + this.GetSpecies() + " has eaten.";
+        eat_str = this.name + " the " + this.species + " has eaten.\n";
         return eat_str;
 
     }
@@ -72,6 +92,7 @@ public abstract class Animal {
         return(this.species);
 
     }
+
 
 
 }
