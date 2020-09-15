@@ -24,7 +24,7 @@ public abstract class Pachyderm extends Animal {
             output_str = this.Charge();
         }
         else {
-            output_str = super.GetName() + " the " + super.GetSpecies() + " has roamed / exercised.\n ";
+            output_str = super.GetName() + " the " + super.GetSpecies() + " has roamed / exercised.\n";
         }
         return output_str;
     }

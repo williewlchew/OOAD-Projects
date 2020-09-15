@@ -8,7 +8,7 @@ public abstract class ZooEmployee {
 
     // Constructor
     public ZooEmployee(){
-        name = "Willie"; //temp
+        name = "Willie";
         pay = 0;
     }
 
