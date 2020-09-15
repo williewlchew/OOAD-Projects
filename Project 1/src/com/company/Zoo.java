@@ -24,9 +24,9 @@ public class Zoo {
     public void InitAnimals() throws FileNotFoundException {
         int[] speciesCounts = {0,0,0,0,0,0,0,0,0,0};
         int animalsCounts = 0;
-        for(int speciesCount : speciesCounts){
-            speciesCount = 2 + rand.nextInt(3);
-            animalsCounts += speciesCount;
+        for(int i = 0; i < speciesCounts.length; i++){
+            speciesCounts[i] = 2 + rand.nextInt(3);
+            animalsCounts += i;
         }
 
         animals = new Animal[animalsCounts];
@@ -37,22 +37,23 @@ public class Zoo {
                 animalIndex++;
             }
         }
+
     }
 
     public Animal InitAnimal(int x) throws FileNotFoundException {
         String[] sexes = {"M", "F"};
         int rnd = new Random().nextInt(sexes.length);
         return switch (x) {
-            case 1 -> (new Hippo(sexes[rnd], names));
-            case 2 -> (new Elephant(sexes[rnd], names));
-            case 3 -> (new Rhino(sexes[rnd], names));
-            case 4 -> (new Cat(sexes[rnd], names));
-            case 5 -> (new Lion(sexes[rnd], names));
-            case 6 -> (new Tiger(sexes[rnd], names));
-            case 7 -> (new Wolf(sexes[rnd], names));
-            case 8 -> (new Dog(sexes[rnd], names));
-            case 9 -> (new BrownBear(sexes[rnd], names));
-            case 10 -> (new SunBear(sexes[rnd], names));
+            case 0 -> (new Hippo(sexes[rnd], names));
+            case 1 -> (new Elephant(sexes[rnd], names));
+            case 2 -> (new Rhino(sexes[rnd], names));
+            case 3 -> (new Cat(sexes[rnd], names));
+            case 4 -> (new Lion(sexes[rnd], names));
+            case 5 -> (new Tiger(sexes[rnd], names));
+            case 6 -> (new Wolf(sexes[rnd], names));
+            case 7 -> (new Dog(sexes[rnd], names));
+            case 8 -> (new BrownBear(sexes[rnd], names));
+            case 9 -> (new SunBear(sexes[rnd], names));
             default -> throw new IllegalStateException("Unexpected value: " + x);
         };
 
