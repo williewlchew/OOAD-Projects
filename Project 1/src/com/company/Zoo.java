@@ -26,18 +26,17 @@ public class Zoo {
         int animalsCounts = 0;
         for(int i = 0; i < speciesCounts.length; i++){
             speciesCounts[i] = 2 + this.rand.nextInt(3);
-            animalsCounts += i;
+            animalsCounts += speciesCounts[i];
         }
 
-        this.animals = new Animal[animalsCounts];
+        animals = new Animal[animalsCounts];
         int animalIndex = 0;
         for (int i = 0; i < 10; i++){
             for(int j = 0; j < speciesCounts[i]; j++){
-                this.animals[animalIndex] = InitAnimal(i);
+                animals[animalIndex] = InitAnimal(i);
                 animalIndex++;
             }
         }
-
     }
 
     public Animal InitAnimal(int x) throws FileNotFoundException {
@@ -64,7 +63,6 @@ public class Zoo {
     public String SimulateDays(int days){
 
         StringBuilder buffer = new StringBuilder();
-
         for(int day = 0; day < days; day++){
             buffer.append(this.keeper.Arrive());
             buffer.append(this.ZooKeeping());
@@ -77,6 +75,7 @@ public class Zoo {
     public String ZooKeeping(){
         StringBuilder buffer = new StringBuilder();
         for(Animal a : this.animals){
+
             buffer.append(this.keeper.Wake(a));
         }
         for(Animal a : this.animals){
