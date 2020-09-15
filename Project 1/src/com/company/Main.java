@@ -8,18 +8,10 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
         // Read in the names of the animals
+
         AnimalNames names = new AnimalNames();
         Zoo zoo = new Zoo();
-//
-        names.SetMaleNamesPath("data/names/animal_names_M.csv");
-        names.SetFemaleNamesPath("data/names/animal_names_F.csv");
-
-        names.SetNames("M");
-        names.SetNames("F");
-
         Hippo hippo1 = new Hippo("M", names);
-
-
 
 
         System.out.println(hippo1.GetName());

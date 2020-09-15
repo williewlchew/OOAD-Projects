@@ -10,6 +10,13 @@ import java.util.Random;
 
 public class AnimalNames {
 
+    AnimalNames() throws FileNotFoundException {
+        this.MaleNamesPath = "data/names/animal_names_M.csv";
+        this.FemaleNamesPath = "data/names/animal_names_F.csv";
+        this.SetNames("M");
+        this.SetNames("F");
+    }
+
     // Variables
     private String MaleNamesPath;
     private String FemaleNamesPath;

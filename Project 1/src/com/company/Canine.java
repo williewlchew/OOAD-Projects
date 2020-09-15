@@ -30,7 +30,7 @@ class Dog extends Canine {
     }
 
     public String Dig() {
-        String dig_str = super.GetName() + " the " + super.GetSpecies() + " has dug a hole.";
+        String dig_str = super.GetName() + " the " + super.GetSpecies() + " has dug a hole.\n";
         return dig_str;
     }
 
@@ -44,7 +44,7 @@ class Dog extends Canine {
             output_str = this.Dig();
         }
         else {
-            output_str = super.GetName() + " the " + super.GetSpecies() + " has roamed / exercised.";
+            output_str = super.GetName() + " the " + super.GetSpecies() + " has roamed / exercised.\n";
         }
         return output_str;
     }
