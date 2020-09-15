@@ -52,6 +52,7 @@ class Elephant extends Pachyderm {
         super.SetName("E", names);
         super.SetNoise("trumpets");
     }
+
 }
 
 

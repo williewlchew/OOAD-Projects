@@ -6,6 +6,25 @@ public abstract class Feline extends Animal {
     Feline(String _sex, AnimalNames names) throws FileNotFoundException {
         super(_sex, names);
     }
+
+    @Override
+    public String Sleep() {
+
+        float prob = rand.nextFloat();
+
+        String sleep_str = "";
+
+        if (prob < 0.30f) {
+            sleep_str = super.Roam();
+        }
+        else if ((0.30f < prob) && (prob < 0.70f)) {
+            sleep_str = super.MakeNoise();
+        }
+        else {
+            sleep_str = super.Sleep();
+        }
+        return sleep_str;
+    }
 }
 
 

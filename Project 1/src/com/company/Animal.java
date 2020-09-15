@@ -20,10 +20,7 @@ public abstract class Animal {
     private String sex;
     protected static Random rand = new Random();
     private String noise = "";
-
-
-
-
+    
 
     // Setters
     protected void SetName(String FirstChar, AnimalNames names) throws FileNotFoundException {
@@ -33,7 +30,7 @@ public abstract class Animal {
     protected void SetSpecies(String _species) {
         this.species = _species;
     }
-    protected  void SetNoise(String _noise){
+    protected void SetNoise(String _noise){
         this.noise = _noise;
     }
 
