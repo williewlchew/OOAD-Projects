@@ -5,10 +5,14 @@ import glob
 if __name__ == "__main__":
     '''
     This file reads all of the files and aggregates them into a dataframe.
+    It takes the union of all unique tuples of (name, sex).
     The unique names for male and females are found, and then split into different files
     based on M and F. Each file is alphabetically organized.
-    source: https://stackoverflow.com/questions/20906474/import-multiple-csv-files-into-pandas-and-concatenate-into-one-dataframe
     '''
+
+
+    # source for adding all the files into a single dataframe
+    # -> https://stackoverflow.com/questions/20906474/import-multiple-csv-files-into-pandas-and-concatenate-into-one-dataframe
     names_path = 'data/names/'
     all_name_files = glob.glob(names_path + '/*.txt')
 

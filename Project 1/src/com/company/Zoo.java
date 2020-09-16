@@ -1,6 +1,7 @@
 package com.company;
 
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Zoo {
@@ -17,13 +18,13 @@ public class Zoo {
         this.InitAnimals();
 
         //## init keepers
-        this.keeper = new Zookeeper();
+        this.keeper = new Zookeeper(names);
     }
 
     // Initialization Methods
     public void InitAnimals() throws FileNotFoundException {
-        int[] speciesCounts = {0,0,0,0,0,0,0,0,0,0};
         int animalsCounts = 0;
+        int[] speciesCounts = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         for(int i = 0; i < speciesCounts.length; i++){
             speciesCounts[i] = 2 + this.rand.nextInt(3);
             animalsCounts += speciesCounts[i];
@@ -63,10 +64,16 @@ public class Zoo {
     public String SimulateDays(int days){
 
         StringBuilder buffer = new StringBuilder();
+        buffer.append("Zoo uptime: " + days + " days.\n\n");
         for(int day = 0; day < days; day++){
+            buffer.append("Day #" + (day + 1) + "\n");
+            buffer.append("\n");
             buffer.append(this.keeper.Arrive());
+            buffer.append("--------------------\n");
             buffer.append(this.ZooKeeping());
+            buffer.append("--------------------\n");
             buffer.append(this.keeper.Leave());
+            buffer.append("\n");
         }
 
         return buffer.toString();
@@ -74,22 +81,11 @@ public class Zoo {
 
     public String ZooKeeping(){
         StringBuilder buffer = new StringBuilder();
-        for(Animal a : this.animals){
-
-            buffer.append(this.keeper.Wake(a));
-        }
-        for(Animal a : this.animals){
-            buffer.append(this.keeper.RollCall(a));
-        }
-        for(Animal a : this.animals){
-            buffer.append(this.keeper.Feed(a));
-        }
-        for(Animal a : this.animals){
-            buffer.append(this.keeper.Exercise(a));
-        }
-        for(Animal a : this.animals){
-            buffer.append(this.keeper.Sleep(a));
-        }
+        Arrays.stream(this.animals).map(a -> this.keeper.Wake(a)).forEach(buffer::append);
+        Arrays.stream(this.animals).map(a -> this.keeper.RollCall(a)).forEach(buffer::append);
+        Arrays.stream(this.animals).map(a -> this.keeper.Feed(a)).forEach(buffer::append);
+        Arrays.stream(this.animals).map(a -> this.keeper.Exercise(a)).forEach(buffer::append);
+        Arrays.stream(this.animals).map(a -> this.keeper.Sleep(a)).forEach(buffer::append);
         return buffer.toString();
     }
 }

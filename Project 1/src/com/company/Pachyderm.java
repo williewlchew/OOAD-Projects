@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 
 public abstract class Pachyderm extends Animal {
 
-    Pachyderm(String _sex, AnimalNames names) throws FileNotFoundException {
+    Pachyderm(String _sex, AnimalNames names) {
         super(_sex, names);
 
     }
@@ -34,7 +34,7 @@ public abstract class Pachyderm extends Animal {
 
 class Hippo extends Pachyderm {
 
-    Hippo(String _sex, AnimalNames names) throws FileNotFoundException {
+    Hippo(String _sex, AnimalNames names) {
         super(_sex, names);
         super.SetSpecies("Hippo");
         super.SetName("H", names);
@@ -46,7 +46,7 @@ class Hippo extends Pachyderm {
 
 
 class Elephant extends Pachyderm {
-    Elephant(String _sex, AnimalNames names) throws FileNotFoundException   {
+    Elephant(String _sex, AnimalNames names)    {
         super(_sex, names);
         super.SetSpecies("Elephant");
         super.SetName("E", names);
@@ -58,7 +58,7 @@ class Elephant extends Pachyderm {
 
 
 class Rhino extends Pachyderm {
-    Rhino(String _sex, AnimalNames names) throws FileNotFoundException   {
+    Rhino(String _sex, AnimalNames names)   {
         super(_sex, names);
         super.SetSpecies("Rhino");
         super.SetName("R", names);

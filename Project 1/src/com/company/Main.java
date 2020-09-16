@@ -1,7 +1,11 @@
 package com.company;
 
 import com.company.AnimalNames;
+
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Main {
 
@@ -11,20 +15,17 @@ public class Main {
 
         AnimalNames names = new AnimalNames();
         Zoo zoo = new Zoo();
-        Hippo hippo1 = new Hippo("M", names);
 
+        String gx = zoo.SimulateDays(7);
+        System.out.println(gx);
 
-        System.out.println(hippo1.GetName());
-        System.out.println(hippo1.GetSpecies());
+        // Printing to a file
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))) {
+            writer.write(gx);
 
-        for (int i = 0; i < 2; i++) {
-            System.out.println(hippo1.Roam());
-            System.out.println(hippo1.WakeUp());
-            System.out.println(hippo1.MakeNoise());
-
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        System.out.println(zoo.SimulateDays(7));
-
     }
 }

@@ -22,7 +22,7 @@ public class AnimalNames {
     private String FemaleNamesPath;
     private List<String> MaleNames = new ArrayList<String>();
     private List<String> FemaleNames = new ArrayList<String>();
-    private static Random rand = new Random();
+    private static final Random rand = new Random();
 
     // Setters
     protected void SetMaleNamesPath(String file_path) {

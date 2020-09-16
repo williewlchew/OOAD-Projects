@@ -7,9 +7,9 @@ public class Zookeeper extends ZooEmployee {
     private float pay;
 
     // Constructor
-    public Zookeeper(){
-        name = "Willie";
-        pay = 0;
+    public Zookeeper(AnimalNames names){
+        this.name = names.GetRandomName("Z", "M");
+        this.pay = 0;
     }
 
     // Basic Methods
@@ -46,6 +46,4 @@ public class Zookeeper extends ZooEmployee {
         String buffer = "Zookeeper " + name + " tucks in " + animal.GetName() + " the " + animal.GetSpecies() + ".\n";
         return(buffer + animal.Sleep());
     }
-
-
 }

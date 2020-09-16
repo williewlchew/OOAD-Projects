@@ -18,7 +18,7 @@ public abstract class Feline extends Animal {
         if (prob < 0.30f) {
             sleep_str = super.Roam();
         }
-        else if ((0.30f < prob) && (prob < 0.70f)) {
+        else if ((prob > 0.30f) && (prob < 0.70f)) {
             sleep_str = super.MakeNoise();
         }
         else {
