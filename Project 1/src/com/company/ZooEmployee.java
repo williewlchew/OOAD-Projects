@@ -1,5 +1,7 @@
 package com.company;
 
+
+// The abstract template that Zookeepers are derived from.
 public abstract class ZooEmployee {
 
     // Variables
@@ -8,7 +10,7 @@ public abstract class ZooEmployee {
 
     // Constructor
     public ZooEmployee(){
-        name = "Willie";
+        name = "";
         pay = 0;
     }
 

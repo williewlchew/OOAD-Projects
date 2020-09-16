@@ -2,10 +2,17 @@ package com.company;
 
 import java.util.Random;
 
+
+/*
+* The Abstract animal class provides the template for all animals, and a set of common methods,
+* getters, setters, and variables that all animals share. This is an example of an abstract class.
+* This template is extended by the 4 main families (which are also abstract classes themselves.)
+* The Animals themselves are not abstract classes.
+*/
+
 public abstract class Animal {
 
-
-    // Constructor
+    // Constructor: sets the sex and selects a random name for the animal.
     Animal(String _sex, AnimalNames names) {
         this.sex = _sex;
         this.SetName(_sex, names);
@@ -31,7 +38,21 @@ public abstract class Animal {
         this.noise = _noise;
     }
 
-    // Actions
+    // Getters
+    public String GetName(){
+        return(this.name);
+
+    }
+    public String GetSpecies() {
+        return(this.species);
+
+    }
+
+    public String GetNoise() {
+        return(this.noise);
+    }
+
+    // Methods
     public String MakeNoise() {
         String noise_str;
         noise_str = this.GetName() + " the "  + this.GetSpecies() + " " + this.GetNoise() + ".\n";
@@ -48,6 +69,8 @@ public abstract class Animal {
 
     public String Sleep(){
         String sleep_str;
+
+        // Quick check to see if the animal object is actually asleep or not.
         if (this.asleep) {
             sleep_str =  this.GetName() + " the " + this.GetSpecies() + " is already asleep.\n";
         }
@@ -60,6 +83,8 @@ public abstract class Animal {
 
     public String WakeUp(){
         String awake_str;
+
+        // Quick check to see if the animal object is actually awake or not.
         if (this.asleep) {
             awake_str = this.GetName() + " the " + this.GetSpecies() + " has woken up.\n";
             this.asleep = false;
@@ -77,21 +102,4 @@ public abstract class Animal {
         return eat_str;
 
     }
-
-
-    // Getters
-    public String GetName(){
-        return(this.name);
-
-    }
-    public String GetSpecies() {
-        return(this.species);
-
-    }
-
-    public String GetNoise() {
-        return(this.noise);
-    }
-
-
 }

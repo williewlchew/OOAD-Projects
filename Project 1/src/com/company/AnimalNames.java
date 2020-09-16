@@ -7,7 +7,16 @@ import java.util.stream.Collectors;
 import java.util.Objects;
 import java.util.Random;
 
-
+/* This class holds the names from the U.S. Census.
+* It splits the names into female and male names, and returns
+* a random name from GetRandomNameHelper.
+* This class implements a significant amount of encapsulation, as
+* it holds all of the data, and uses a simple 'API / function call'
+* to get a random name, without needing to be very explicit.
+* The data and the methods that operate on the data (GetRandomName) exist together in one class.
+* names.GetRandomName("A", "F") is all one needs to get a random female name that starts with an A
+* after instantiation of the class as an object.
+ */
 public class AnimalNames {
 
     AnimalNames() throws FileNotFoundException {
@@ -24,14 +33,6 @@ public class AnimalNames {
     private List<String> FemaleNames = new ArrayList<String>();
     private static final Random rand = new Random();
 
-    // Setters
-    protected void SetMaleNamesPath(String file_path) {
-        this.MaleNamesPath = file_path;
-    }
-
-    protected void SetFemaleNamesPath(String file_path) {
-        this.FemaleNamesPath = file_path;
-    }
 
     // Getters
     public String GetRandomName(String FirstChar, String sex) {
@@ -45,6 +46,13 @@ public class AnimalNames {
         return name;
     }
 
+    // Helper Functions
+
+    /* This function takes the first character (FirstChar) of the specific type of animal
+    * (such as 'H' for Hippo) and filters out all of the names that do not start with FirstChar.
+    * Then it uses a random number generator to randomly pick one of those names from the list of names
+    * that start with FirstChar.
+     */
     private String GetRandomNameHelper(String FirstChar, List<String> names) {
 
         // https://beginnersbook.com/2017/10/java-8-stream-filter/
@@ -54,7 +62,9 @@ public class AnimalNames {
         return name;
     }
 
-    // Other Functions
+    /*  ReadNames reads in the files and adds then returns the names.
+    * It uses the BufferedReader.
+    * */
     private static List<String> ReadNames(String file_path) {
 
         List<String> names = new ArrayList<String>();
@@ -72,7 +82,12 @@ public class AnimalNames {
         return names;
     }
 
-    public void SetNames(String sex) throws FileNotFoundException {
+    // Setters
+    /*
+    * A wrapper function for ReadNames essentially that sets the names,
+    * for Male and Female Names.
+    * */
+    public void SetNames(String sex) {
         if (Objects.equals(sex, "M")) {
             this.MaleNames = ReadNames(this.MaleNamesPath);
         }

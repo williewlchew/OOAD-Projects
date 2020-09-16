@@ -2,12 +2,14 @@ package com.company;
 
 import java.io.FileNotFoundException;
 
+// The abstract class Feline
 public abstract class Feline extends Animal {
 
     Feline(String _sex, AnimalNames names) throws FileNotFoundException {
         super(_sex, names);
     }
 
+    /* Felines may not sleep when ordered to.*/
     @Override
     public String Sleep() {
 
@@ -28,7 +30,7 @@ public abstract class Feline extends Animal {
     }
 }
 
-
+// The class Cat
 class Cat extends Feline {
     Cat(String _sex, AnimalNames names) throws FileNotFoundException {
         super(_sex, names);
@@ -38,7 +40,7 @@ class Cat extends Feline {
     }
 }
 
-
+// The class Lion
 class Lion extends Feline {
     Lion(String _sex, AnimalNames names) throws FileNotFoundException {
         super(_sex, names);
@@ -48,6 +50,7 @@ class Lion extends Feline {
     }
 }
 
+// The class Tiger
 class Tiger extends Feline {
     Tiger(String _sex, AnimalNames names) throws FileNotFoundException {
         super(_sex, names);

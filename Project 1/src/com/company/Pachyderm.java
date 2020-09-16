@@ -1,7 +1,9 @@
 package com.company;
 
-import java.io.FileNotFoundException;
 
+// Pachyderm Class
+/* All specific species are polymorphic, as they are both a member of their own family
+* (i.e. Pachyderm, Canine, Fline, Ursidae) and they are all of the Animal Class.*/
 public abstract class Pachyderm extends Animal {
 
     Pachyderm(String _sex, AnimalNames names) {
@@ -31,9 +33,11 @@ public abstract class Pachyderm extends Animal {
 }
 
 
-
+// The Hippo class
 class Hippo extends Pachyderm {
-
+    /* All animals have an overloaded constructor wherein, their sex, name,
+    * species, and the noise they make are set.
+    * */
     Hippo(String _sex, AnimalNames names) {
         super(_sex, names);
         super.SetSpecies("Hippo");
@@ -44,7 +48,7 @@ class Hippo extends Pachyderm {
 }
 
 
-
+// The Elephant Class
 class Elephant extends Pachyderm {
     Elephant(String _sex, AnimalNames names)    {
         super(_sex, names);
@@ -56,7 +60,7 @@ class Elephant extends Pachyderm {
 }
 
 
-
+// The Rhino Class
 class Rhino extends Pachyderm {
     Rhino(String _sex, AnimalNames names)   {
         super(_sex, names);

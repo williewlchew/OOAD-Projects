@@ -11,19 +11,17 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        // Read in the names of the animals
-
-        AnimalNames names = new AnimalNames();
+        // Initialize a new Zoo
         Zoo zoo = new Zoo();
 
+        // Simulate the Zoo for a week
         String gx = zoo.SimulateDays(7);
         System.out.println(gx);
 
         // Printing to a file
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("dayatthezoo.out"))) {
             writer.write(gx);
 
-            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -2,15 +2,19 @@ package com.company;
 
 import java.io.FileNotFoundException;
 
+
+// The abstract class Ursidae
 public abstract class Ursidae extends Animal{
     Ursidae(String _sex, AnimalNames names) throws FileNotFoundException {
         super(_sex, names);
     }
 
+
+    // The Ursidaes get to eat the occasional large meal.
     @Override
     public String Eat() {
-
-        float prob = rand.nextFloat();
+        /* Only need to use one random number generator in the Abstract Animal superclass. */
+        float prob = super.rand.nextFloat();
 
         String food_str;
 
@@ -24,7 +28,7 @@ public abstract class Ursidae extends Animal{
     }
 }
 
-
+// The class Brown Bear, which is an animal in the zoo
 class BrownBear extends Pachyderm {
     BrownBear(String _sex, AnimalNames names) throws FileNotFoundException   {
         super(_sex, names);
@@ -35,6 +39,7 @@ class BrownBear extends Pachyderm {
 
 }
 
+// The class Sun Bear, which is an animal in the zoo.
 class SunBear extends Pachyderm {
     SunBear(String _sex, AnimalNames names) throws FileNotFoundException   {
         super(_sex, names);
@@ -43,9 +48,11 @@ class SunBear extends Pachyderm {
         super.SetNoise("roars aggressively");
     }
 
+    /* Due to the aggressive nature of the Sun Bear, there is a change that
+    *  when ordered to sleep, it does not.*/
     @Override
     public String Sleep() {
-        float prob = rand.nextFloat();
+        float prob = super.rand.nextFloat();
 
         String sleep_str = "";
 

@@ -1,5 +1,8 @@
 package com.company;
 
+
+// An extension of ZooEmployee, a zookeeper performs the actions necessary to take care of the animals
+// at the zoo.
 public class Zookeeper extends ZooEmployee {
 
     // Variables
@@ -22,6 +25,14 @@ public class Zookeeper extends ZooEmployee {
     }
 
     // Zookeeping Methods
+
+    /*
+     * All of these zookeeping methods are simple return statements that append  the zookeeper's
+     * output with the animal's output, by calling each animal's action.
+     */
+
+
+
     public String Wake(Animal animal){
         String buffer = "Zookeeper " + name + " wakes up " + animal.GetName() + " the " + animal.GetSpecies() + ".\n";
         return(buffer + animal.WakeUp());

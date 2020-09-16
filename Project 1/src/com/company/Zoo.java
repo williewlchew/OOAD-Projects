@@ -18,10 +18,25 @@ public class Zoo {
         this.InitAnimals();
 
         //## init keepers
+        /* Because of both encapsulation and abstraction,
+         * we can name the zookeeper!
+         * His name always starts with a 'Z', since that's what he is.
+        */
         this.keeper = new Zookeeper(names);
     }
 
     // Initialization Methods
+
+    /*
+     * This function initializes the animals in the zoo, and assigns
+     * them a frequency of: 2 < f < 5. It then populates the zoo
+     * by initializing animals in the animals list. Each index is a different
+     * species in speciesCounts, with the value in there being f.
+     *
+     * Each of these animals have their own unique identity, so the
+     * JVM / compiler does not get confused by the same animal species,
+     * even if they may just have different names at the end of the day.
+     */
     public void InitAnimals() throws FileNotFoundException {
         int animalsCounts = 0;
         int[] speciesCounts = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -40,6 +55,13 @@ public class Zoo {
         }
     }
 
+    /*
+    * This function initializes an animal based on the
+    * index of speciesCount in InitAnimals() above. It then calls
+    * the different constructors that initialize a new animal
+    * given it's specific sex, and the names encapsulation class.
+    * A switch statement is used to construct these classes.
+    * */
     public Animal InitAnimal(int x) throws FileNotFoundException {
         String[] sexes = {"M", "F"};
         int rnd = new Random().nextInt(sexes.length);
@@ -61,6 +83,14 @@ public class Zoo {
     }
 
     // Methods
+
+    /*
+    * This function runs the zoo for n days. It is primarily for aggregating
+    * the return string statements made by the animals and the zookeepers,
+    * as well as some utility strings that tell the date, and the
+    * arrival, departure of the zookeeper. These strings are appended to
+    * a StringBuilder buffer and returned.
+    * */
     public String SimulateDays(int days){
 
         StringBuilder buffer = new StringBuilder();
@@ -79,6 +109,11 @@ public class Zoo {
         return buffer.toString();
     }
 
+    /*
+     * This function implements the Zookeeper's actions for each animal in the zoo.
+     * It then appends the outputs of both the Zookeeper and the animals to the buffer,
+     * and returns the string buffer.
+     */
     public String ZooKeeping(){
         StringBuilder buffer = new StringBuilder();
         Arrays.stream(this.animals).map(a -> this.keeper.Wake(a)).forEach(buffer::append);

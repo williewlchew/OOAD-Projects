@@ -1,5 +1,6 @@
 package com.company;
 
+// The abstract class canine
 public abstract class Canine extends Animal {
 
 
@@ -8,9 +9,11 @@ public abstract class Canine extends Animal {
     }
 
     @Override
+    /* The canines may make noises if they are told to eat. And then th
+    * they will eat.*/
     public String Eat() {
 
-        float prob = rand.nextFloat();
+        float prob = super.rand.nextFloat();
         String output_str = "";
 
         if (prob < 0.10f) {
@@ -22,7 +25,7 @@ public abstract class Canine extends Animal {
         return output_str;
     }
 }
-
+// The Wolf Class
 class Wolf extends Canine {
 
     Wolf(String _sex, AnimalNames names) {
@@ -47,6 +50,7 @@ class Wolf extends Canine {
     }
 }
 
+// The Dog Class
 class Dog extends Canine {
 
     Dog(String _sex, AnimalNames names) {
@@ -56,11 +60,14 @@ class Dog extends Canine {
         super.SetNoise("barks");
     }
 
+
+    // The dog can dig a hole.
     public String Dig() {
         String dig_str = super.GetName() + " the " + super.GetSpecies() + " has dug a hole.\n";
         return dig_str;
     }
 
+    // The dog may dig a hole if it's told to roam / exercise.
     @Override
     public String Roam() {
 
