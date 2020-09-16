@@ -48,7 +48,7 @@ class SunBear extends Pachyderm {
         super.SetNoise("roars aggressively");
     }
 
-    /* Due to the aggressive nature of the Sun Bear, there is a change that
+    /* Due to the aggressive nature of the Sun Bear, there is a chance() that
     *  when ordered to sleep, it does not.*/
     @Override
     public String Sleep() {
