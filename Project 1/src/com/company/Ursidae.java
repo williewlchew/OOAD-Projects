@@ -29,7 +29,7 @@ public abstract class Ursidae extends Animal{
 }
 
 // The class Brown Bear, which is an animal in the zoo
-class BrownBear extends Pachyderm {
+class BrownBear extends Ursidae {
     BrownBear(String _sex, AnimalNames names) throws FileNotFoundException   {
         super(_sex, names);
         super.SetSpecies("Brown Bear");
@@ -40,7 +40,7 @@ class BrownBear extends Pachyderm {
 }
 
 // The class Sun Bear, which is an animal in the zoo.
-class SunBear extends Pachyderm {
+class SunBear extends Ursidae {
     SunBear(String _sex, AnimalNames names) throws FileNotFoundException   {
         super(_sex, names);
         super.SetSpecies("Sun Bear");

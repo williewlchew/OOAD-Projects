@@ -16,11 +16,13 @@ That python file is only to aggregate all of the names proved by [1] into two fi
 # UML
 We decided that it would be a better idea to construct the UML diagram of the assignment before starting the code using Lucidchart as students get free accounts through your education email. It helped us quite a lot!
 
-![UML by IntelliJ](UML.png)
+![UML by IntelliJ](UML-1.png)
+
+![UML by IntelliJ](UML-2.png)
 
 * [Our UML diagram](Project%201%20UML.pdf)
-* [IntelliJ's UML Diagram](Project%201%20UML-2.pdf)
-* [IntelliJ's UML Diagram 2](Project%201%20UML-3.pdf)
+* [IntelliJ's UML Diagram](UML-1.pdf)
+* [IntelliJ's UML Diagram 2](UML-2.pdf)
 
 # References
 <sup>[1]</sup>[Baby names from Social Security Card Applications National Data](https://catalog.data.gov/dataset/baby-names-from-social-security-card-applications-national-level-data)
