@@ -19,9 +19,9 @@ import java.util.Random;
  */
 public class AnimalNames {
 
-    AnimalNames() throws FileNotFoundException {
-        this.MaleNamesPath = "../../../data/names/animal_names_M.csv";
-        this.FemaleNamesPath = "../../../data/names/animal_names_F.csv";
+    AnimalNames() {
+        this.MaleNamesPath = "../data/names/animal_names_M.csv";
+        this.FemaleNamesPath = "../data/names/animal_names_F.csv";
         this.SetNames("M");
         this.SetNames("F");
     }
@@ -94,6 +94,5 @@ public class AnimalNames {
         else if (Objects.equals(sex, "F")) {
             this.FemaleNames = ReadNames(this.FemaleNamesPath);
         }
-        return;
     }
 }
