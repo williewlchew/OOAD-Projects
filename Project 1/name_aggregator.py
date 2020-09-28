@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     # source for adding all the files into a single dataframe
     # -> https://stackoverflow.com/questions/20906474/import-multiple-csv-files-into-pandas-and-concatenate-into-one-dataframe
-    names_path = 'data/names/'
+    names_path = '../data/names/'
     all_name_files = glob.glob(names_path + '/*.txt')
 
     li = []
