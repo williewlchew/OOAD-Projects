@@ -10,19 +10,27 @@ public class Zoo {
     private AnimalNames names = new AnimalNames();
     private Animal[] animals;
     private Zookeeper keeper;
+
+    private ZooClock clock;
+    private MessageBean clockBean;
+
     private static Random rand = new Random();
 
     // Constructor
     public Zoo() throws FileNotFoundException{
-        //## init animals
+        //init animals
         this.InitAnimals();
 
-        //## init keepers
+        //init keepers
         /* Because of both encapsulation and abstraction,
          * we can name the zookeeper!
          * His name always starts with a 'Z', since that's what he is.
         */
         this.keeper = new Zookeeper(names);
+
+        // init clock
+        clockBean = new MessageBean();
+        this.clock = new ZooClock(clockBean);
     }
 
     // Initialization Methods
@@ -92,18 +100,11 @@ public class Zoo {
     * a StringBuilder buffer and returned.
     * */
     public String SimulateDays(int days){
-
         StringBuilder buffer = new StringBuilder();
         buffer.append("Zoo uptime: " + days + " days.\n\n");
         for(int day = 0; day < days; day++){
-            buffer.append("Day #" + (day + 1) + "\n");
-            buffer.append("\n");
-            buffer.append(this.keeper.Arrive());
-            buffer.append("--------------------\n");
-            buffer.append(this.ZooKeeping());
-            buffer.append("--------------------\n");
-            buffer.append(this.keeper.Leave());
-            buffer.append("\n");
+            clock.ResetTime();
+            buffer.append(ZooKeeping());
         }
 
         return buffer.toString();
@@ -116,11 +117,13 @@ public class Zoo {
      */
     public String ZooKeeping(){
         StringBuilder buffer = new StringBuilder();
-        Arrays.stream(this.animals).map(a -> this.keeper.Wake(a)).forEach(buffer::append);
-        Arrays.stream(this.animals).map(a -> this.keeper.RollCall(a)).forEach(buffer::append);
-        Arrays.stream(this.animals).map(a -> this.keeper.Feed(a)).forEach(buffer::append);
-        Arrays.stream(this.animals).map(a -> this.keeper.Exercise(a)).forEach(buffer::append);
-        Arrays.stream(this.animals).map(a -> this.keeper.Sleep(a)).forEach(buffer::append);
+
+        keeper.Arrive(animals, clockBean);
+        while(clock.GetTime() < 20){
+            clock.ProgressTime();
+        }
+        buffer.append(keeper.Leave());
+
         return buffer.toString();
     }
 }
