@@ -9,7 +9,10 @@ public class Zoo {
     // Variables
     private AnimalNames names = new AnimalNames();
     private Animal[] animals;
+
     private Zookeeper keeper;
+    private MessageBean keeperBean;
+    private ZooAnnouncer announcer;
 
     private ZooClock clock;
     private MessageBean clockBean;
@@ -27,6 +30,10 @@ public class Zoo {
          * His name always starts with a 'Z', since that's what he is.
         */
         this.keeper = new Zookeeper(names);
+        this.announcer = new ZooAnnouncer(names);
+
+        // init keeper bean
+        keeperBean = new MessageBean();
 
         // init clock
         clockBean = new MessageBean();
@@ -118,11 +125,15 @@ public class Zoo {
     public String ZooKeeping(){
         StringBuilder buffer = new StringBuilder();
 
-        keeper.Arrive(animals, clockBean);
+        keeper.Arrive(animals, clockBean, keeperBean);
+        announcer.Arrive(keeperBean);
+
         while(clock.GetTime() < 20){
             clock.ProgressTime();
         }
+
         buffer.append(keeper.Leave());
+        announcer.Leave();
 
         return buffer.toString();
     }

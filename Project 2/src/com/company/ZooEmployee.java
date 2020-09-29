@@ -5,8 +5,8 @@ package com.company;
 public abstract class ZooEmployee {
 
     // Variables
-    private String name;
-    private float pay;
+    protected String name;
+    protected float pay;
 
     // Constructor
     public ZooEmployee(){
