@@ -17,40 +17,40 @@ public class Zookeeper extends ZooEmployee {
         if((int) e.getNewValue() == 9){
             selfState = "wake";
             selfBean.setMessage(selfState);
-            for(int i = 0; i < animals.length; i++){
-                buffer.append(Wake(animals[i]));
+            for (Animal animal : animals) {
+                buffer.append(Wake(animal));
             }
         }
 
         else if((int) e.getNewValue() == 10){
             selfState = "roll call";
             selfBean.setMessage(selfState);
-            for(int i = 0; i < animals.length; i++){
-                buffer.append(RollCall(animals[i]));
+            for (Animal animal : animals) {
+                buffer.append(RollCall(animal));
             }
         }
 
         else if((int) e.getNewValue() == 12){
             selfState = "feed";
             selfBean.setMessage(selfState);
-            for(int i = 0; i < animals.length; i++){
-                buffer.append(Feed(animals[i]));
+            for (Animal animal : animals) {
+                buffer.append(Feed(animal));
             }
         }
 
         else if((int) e.getNewValue() == 15){
             selfState = "exercise";
             selfBean.setMessage(selfState);
-            for(int i = 0; i < animals.length; i++){
-                buffer.append(Exercise(animals[i]));
+            for (Animal animal : animals) {
+                buffer.append(Exercise(animal));
             }
         }
 
         else if((int) e.getNewValue() == 19){
             selfState = "tuck in";
             selfBean.setMessage(selfState);
-            for(int i = 0; i < animals.length; i++){
-                buffer.append(Sleep(animals[i]));
+            for (Animal animal : animals) {
+                buffer.append(Sleep(animal));
             }
         }
     });

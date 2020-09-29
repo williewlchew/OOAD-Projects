@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.Arrays;
 import java.util.Random;
 
 
@@ -25,7 +24,7 @@ public abstract class Animal {
     private boolean asleep = true;
     private final String sex;
     protected static Random rand = new Random();
-    private String noise = "";
+    private NoiseBehavior noise;
     
 
     // Setters
