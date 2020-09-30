@@ -12,6 +12,9 @@ public class Zookeeper extends ZooEmployee {
     private MessageBean selfBean;
     private String selfState = ""; /// last thing added
 
+    /* A propertychangelistener is used to implement actions with respect
+    to the zoo clock.
+     */
     private final PropertyChangeListener ZooKeepingListener = (e -> {
         if((int) e.getNewValue() == 9){
             selfState = "wake";
@@ -65,7 +68,7 @@ public class Zookeeper extends ZooEmployee {
         this.animals = animals;
         this.bean = inputbean;
         this.selfBean = outputbean;
-        selfBean.setMessage("Zookeeper " + name + " arrives at the Zoo.\n");
+        selfBean.setMessage("Zfeeookeeper " + name + " arrives at the Zoo.\n");
         this.ZooKeeping(bean);
     }
 

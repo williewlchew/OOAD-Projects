@@ -12,7 +12,9 @@ public class ZooFoodServer extends ZooEmployee{
         this.name = names.GetRandomName("Z", "M");
         this.pay = 0;
     }
-
+    /* A propertychangelistener is used to implement actions with respect
+    to the zoo clock.
+     */
     private final PropertyChangeListener ZooFoodServerListener = (e -> {
         if((int) e.getNewValue() == 8){
             selfBean.setMessage(Clean());
