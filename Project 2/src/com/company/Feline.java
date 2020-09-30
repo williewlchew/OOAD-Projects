@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 // The abstract class Feline
 public abstract class Feline extends Animal {
 
-    Feline(String _sex, AnimalNames names) throws FileNotFoundException {
+    Feline(String _sex, AnimalNames names){
         super(_sex, names);
     }
 
@@ -36,7 +36,7 @@ class Cat extends Feline {
         super(_sex, names);
         super.SetSpecies("Cat");
         super.SetName("C", names);
-        super.SetNoise("meows");
+        super.SetNoise(new NoisePurr());
     }
 }
 
@@ -46,7 +46,7 @@ class Lion extends Feline {
         super(_sex, names);
         super.SetSpecies("Lion");
         super.SetName("L", names);
-        super.SetNoise("roars");
+        super.SetNoise(new NoiseRoar());
     }
 }
 
@@ -56,6 +56,6 @@ class Tiger extends Feline {
         super(_sex, names);
         super.SetSpecies("Tiger");
         super.SetName("T", names);
-        super.SetNoise("purrs");
+        super.SetNoise(new NoisePurr());
     }
 }

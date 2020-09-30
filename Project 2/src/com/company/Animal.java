@@ -25,7 +25,7 @@ public abstract class Animal {
     private final String sex;
     protected static Random rand = new Random();
     private NoiseBehavior noise;
-    
+
 
     // Setters
     protected void SetName(String FirstChar, AnimalNames names) {
@@ -34,8 +34,8 @@ public abstract class Animal {
     protected void SetSpecies(String _species) {
         this.species = _species;
     }
-    protected void SetNoise(String _noise){
-        this.noise = _noise;
+    protected void SetNoise(NoiseBehavior nb){
+        this.noise = nb;
     }
 
     // Getters
@@ -49,7 +49,7 @@ public abstract class Animal {
     }
 
     public String GetNoise() {
-        return(this.noise);
+        return(noise.makenoise());
     }
 
     // Methods

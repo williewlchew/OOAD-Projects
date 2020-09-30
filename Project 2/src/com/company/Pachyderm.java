@@ -8,7 +8,6 @@ public abstract class Pachyderm extends Animal {
 
     Pachyderm(String _sex, AnimalNames names) {
         super(_sex, names);
-
     }
 
     public String Charge() {
@@ -42,7 +41,7 @@ class Hippo extends Pachyderm {
         super(_sex, names);
         super.SetSpecies("Hippo");
         super.SetName("H", names);
-        super.SetNoise("growns");
+        super.SetNoise(new NoiseGroan());
 
     }
 }
@@ -50,11 +49,11 @@ class Hippo extends Pachyderm {
 
 // The Elephant Class
 class Elephant extends Pachyderm {
-    Elephant(String _sex, AnimalNames names)    {
+    Elephant(String _sex, AnimalNames names) {
         super(_sex, names);
         super.SetSpecies("Elephant");
         super.SetName("E", names);
-        super.SetNoise("trumpets");
+        super.SetNoise(new NoiseTrumpet());
     }
 
 }
@@ -66,7 +65,7 @@ class Rhino extends Pachyderm {
         super(_sex, names);
         super.SetSpecies("Rhino");
         super.SetName("R", names);
-        super.SetNoise("growls");
+        super.SetNoise(new NoiseGrowel());
     }
 
 }

@@ -34,7 +34,7 @@ class BrownBear extends Ursidae {
         super(_sex, names);
         super.SetSpecies("Brown Bear");
         super.SetName("B", names);
-        super.SetNoise("growels");
+        super.SetNoise(new NoiseGrowel());
     }
 
 }
@@ -45,10 +45,10 @@ class SunBear extends Ursidae {
         super(_sex, names);
         super.SetSpecies("Sun Bear");
         super.SetName("S", names);
-        super.SetNoise("roars aggressively");
+        super.SetNoise(new NoiseRoarAggressive());
     }
 
-    /* Due to the aggressive nature of the Sun Bear, there is a chance() that
+    /* Due to the aggressive nature of the Sun Bear, there is a chance that
     *  when ordered to sleep, it does not.*/
     @Override
     public String Sleep() {

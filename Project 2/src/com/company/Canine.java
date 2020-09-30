@@ -32,7 +32,7 @@ class Wolf extends Canine {
         super(_sex, names);
         super.SetSpecies("Wolf");
         super.SetName("W", names);
-        super.SetNoise("bark-howls");
+        super.SetNoise(new NoiseHowl());
     }
 
     @Override
@@ -57,7 +57,7 @@ class Dog extends Canine {
         super(_sex, names);
         super.SetSpecies("Dog");
         super.SetName("D", names);
-        super.SetNoise("barks");
+        super.SetNoise(new NoiseBark());
     }
 
 
