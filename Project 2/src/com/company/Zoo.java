@@ -1,5 +1,6 @@
 package com.company;
 
+import java.beans.PropertyChangeListener;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Random;
@@ -11,20 +12,32 @@ public class Zoo {
     private Animal[] animals;
 
     private Zookeeper keeper;
-    private MessageBean keeperBean;
-    private MessageBean foodBean;
     private ZooAnnouncer announcer;
     private ZooFoodServer foodserver;
+    private MessageBean keeperBean;
+    private MessageBean foodBean;
+    private MessageBean announceBean;
 
     private ZooClock clock;
     private MessageBean clockBean;
 
     private static Random rand = new Random();
 
+    private StringBuilder buffer;
+
+    private final PropertyChangeListener ZooListener = (e -> {
+        buffer.append((String) e.getNewValue());
+    });
+
     // Constructor
     public Zoo() throws FileNotFoundException{
         //init animals
         this.InitAnimals();
+
+        // init employee beans
+        keeperBean = new MessageBean();
+        foodBean = new MessageBean();
+        announceBean = new MessageBean();
 
         //init keepers
         /* Because of both encapsulation and abstraction,
@@ -32,18 +45,16 @@ public class Zoo {
          * His name always starts with a 'Z', since that's what he is.
         */
         this.keeper = new Zookeeper(names);
-        this.announcer = new ZooAnnouncer(names);
+        this.announcer = new ZooAnnouncer(names, announceBean);
         this.foodserver = new ZooFoodServer(names);
 
-        // init keeper bean
-        keeperBean = new MessageBean();
-
-        // init foodserver bean
-        foodBean = new MessageBean();
+        announceBean.addPropertyChangeListener(ZooListener);
 
         // init clock
         clockBean = new MessageBean();
         this.clock = new ZooClock(clockBean);
+
+        buffer = new StringBuilder();
     }
 
     // Initialization Methods
@@ -112,15 +123,14 @@ public class Zoo {
     * a StringBuilder buffer and returned.
     * */
     public String SimulateDays(int days){
-        StringBuilder buffer = new StringBuilder();
+
+        buffer = new StringBuilder();
         buffer.append("Zoo uptime: " + days + " days.\n\n");
         for(int day = 0; day < days; day++){
             buffer.append("\nDay " + (day + 1) + ":\n\n");
             clock.ResetTime();
-            buffer.append(ZooKeeping());
-//            buffer.append(ZooFoodServing());
+            ZooKeeping();
         }
-
         return buffer.toString();
     }
 
@@ -129,23 +139,17 @@ public class Zoo {
      * It then appends the outputs of both the Zookeeper and the animals to the buffer,
      * and returns the string buffer.
      */
-    public String ZooKeeping(){
-        StringBuilder buffer = new StringBuilder();
-
+    public void ZooKeeping(){
         keeper.Arrive(animals, clockBean, keeperBean);
         foodserver.Arrive(clockBean, foodBean);
-        announcer.Arrive(keeperBean);
-        announcer.Arrive(foodBean);
+        announcer.Arrive(keeperBean, foodBean);
 
         while(clock.GetTime() < 20){
             clock.ProgressTime();
         }
 
-        buffer.append(keeper.Leave());
-        buffer.append(foodserver.Leave());
-
+        keeper.Leave();
+        foodserver.Leave();
         announcer.Leave();
-
-        return buffer.toString();
     }
 }

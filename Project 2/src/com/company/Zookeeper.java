@@ -6,7 +6,6 @@ import java.beans.PropertyChangeListener;
 public class Zookeeper extends ZooEmployee {
 
     // Variables
-    private StringBuilder buffer = new StringBuilder();
     private Animal[] animals;
     private MessageBean bean;
 
@@ -18,7 +17,7 @@ public class Zookeeper extends ZooEmployee {
             selfState = "wake";
             selfBean.setMessage(selfState);
             for (Animal animal : animals) {
-                buffer.append(Wake(animal));
+                selfBean.setMessage(Wake(animal));
             }
         }
 
@@ -26,7 +25,7 @@ public class Zookeeper extends ZooEmployee {
             selfState = "roll call";
             selfBean.setMessage(selfState);
             for (Animal animal : animals) {
-                buffer.append(RollCall(animal));
+                selfBean.setMessage(RollCall(animal));
             }
         }
 
@@ -34,7 +33,7 @@ public class Zookeeper extends ZooEmployee {
             selfState = "feed";
             selfBean.setMessage(selfState);
             for (Animal animal : animals) {
-                buffer.append(Feed(animal));
+                selfBean.setMessage(Feed(animal));
             }
         }
 
@@ -42,7 +41,7 @@ public class Zookeeper extends ZooEmployee {
             selfState = "exercise";
             selfBean.setMessage(selfState);
             for (Animal animal : animals) {
-                buffer.append(Exercise(animal));
+                selfBean.setMessage(Exercise(animal));
             }
         }
 
@@ -50,7 +49,7 @@ public class Zookeeper extends ZooEmployee {
             selfState = "tuck in";
             selfBean.setMessage(selfState);
             for (Animal animal : animals) {
-                buffer.append(Sleep(animal));
+                selfBean.setMessage(Sleep(animal));
             }
         }
     });
@@ -66,18 +65,16 @@ public class Zookeeper extends ZooEmployee {
         this.animals = animals;
         this.bean = inputbean;
         this.selfBean = outputbean;
-        this.buffer = new StringBuilder();
-        buffer.append("Zookeeper " + name + " arrives at the Zoo.\n");
+        selfBean.setMessage("Zookeeper " + name + " arrives at the Zoo.\n");
         this.ZooKeeping(bean);
     }
 
-    public String Leave(){
+    public void Leave(){
         bean.removePropertyChangeListener(ZooKeepingListener);
-        buffer.append("Zookeeper " + name + " leaves at the Zoo.\n");
+        selfBean.setMessage("Zookeeper " + name + " leaves at the Zoo.\n");
         this.animals = null;
         this.bean = null;
         this.selfBean = null;
-        return(buffer.toString());
     }
 
     // Zookeeping Methods
