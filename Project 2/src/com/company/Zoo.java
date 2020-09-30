@@ -12,7 +12,9 @@ public class Zoo {
 
     private Zookeeper keeper;
     private MessageBean keeperBean;
+    private MessageBean foodBean;
     private ZooAnnouncer announcer;
+    private ZooFoodServer foodserver;
 
     private ZooClock clock;
     private MessageBean clockBean;
@@ -31,9 +33,13 @@ public class Zoo {
         */
         this.keeper = new Zookeeper(names);
         this.announcer = new ZooAnnouncer(names);
+        this.foodserver = new ZooFoodServer(names);
 
         // init keeper bean
         keeperBean = new MessageBean();
+
+        // init food server bean
+        foodBean = new MessageBean();
 
         // init clock
         clockBean = new MessageBean();
@@ -133,6 +139,22 @@ public class Zoo {
         }
 
         buffer.append(keeper.Leave());
+        announcer.Leave();
+
+        return buffer.toString();
+    }
+
+
+    public String ZooFoodServing(){
+        StringBuilder buffer = new StringBuilder();
+        foodserver.Arrive(clockBean, foodBean);
+        announcer.Arrive(foodBean);
+
+        while(clock.GetTime() < 20){
+            clock.ProgressTime();
+        }
+
+        buffer.append(foodserver.Leave());
         announcer.Leave();
 
         return buffer.toString();
