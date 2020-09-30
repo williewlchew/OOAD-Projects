@@ -38,7 +38,7 @@ public class Zoo {
         // init keeper bean
         keeperBean = new MessageBean();
 
-        // init food server bean
+        // init foodserver bean
         foodBean = new MessageBean();
 
         // init clock
@@ -116,8 +116,10 @@ public class Zoo {
         StringBuilder buffer = new StringBuilder();
         buffer.append("Zoo uptime: " + days + " days.\n\n");
         for(int day = 0; day < days; day++){
+            buffer.append("\nDay " + (day + 1) + ":\n\n");
             clock.ResetTime();
             buffer.append(ZooKeeping());
+            buffer.append(ZooFoodServing());
         }
 
         return buffer.toString();
