@@ -99,7 +99,6 @@ public class Zoo {
             case 9 -> (new SunBear(sexes[rnd], this.names));
             default -> throw new IllegalStateException("Unexpected value: " + x);
         };
-
         // should never get here
     }
 
