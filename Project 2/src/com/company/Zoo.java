@@ -118,7 +118,7 @@ public class Zoo {
             buffer.append("\nDay " + (day + 1) + ":\n\n");
             clock.ResetTime();
             buffer.append(ZooKeeping());
-            buffer.append(ZooFoodServing());
+//            buffer.append(ZooFoodServing());
         }
 
         return buffer.toString();
@@ -133,29 +133,17 @@ public class Zoo {
         StringBuilder buffer = new StringBuilder();
 
         keeper.Arrive(animals, clockBean, keeperBean);
-        announcer.Arrive(keeperBean);
-
-        while(clock.GetTime() < 20){
-            clock.ProgressTime();
-        }
-
-        buffer.append(keeper.Leave());
-        announcer.Leave();
-
-        return buffer.toString();
-    }
-
-
-    public String ZooFoodServing(){
-        StringBuilder buffer = new StringBuilder();
         foodserver.Arrive(clockBean, foodBean);
+        announcer.Arrive(keeperBean);
         announcer.Arrive(foodBean);
 
         while(clock.GetTime() < 20){
             clock.ProgressTime();
         }
 
+        buffer.append(keeper.Leave());
         buffer.append(foodserver.Leave());
+
         announcer.Leave();
 
         return buffer.toString();

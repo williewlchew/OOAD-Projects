@@ -82,7 +82,7 @@ public class ZooFoodServer extends ZooEmployee{
 //        this.bean = inputbean;
 //        this.selfBean = outputbean;
 //        this.buffer = new StringBuilder();
-        buffer.append("Zoo Food Server" + this.name + "is cleaning.\n");
+        buffer.append("Zoo Food Server " + this.name + " is cleaning.\n");
 //        this.ZooFoodServing(bean);
         return(buffer.toString());
     }
@@ -90,7 +90,7 @@ public class ZooFoodServer extends ZooEmployee{
 //        this.bean = inputbean;
 //        this.selfBean = outputbean;
 //        this.buffer = new StringBuilder();
-        buffer.append("Zoo Food Server" + this.name + "is preparing Food.\n");
+        buffer.append("Zoo Food Server " + this.name + " is preparing Food.\n");
 //        this.ZooFoodServing(bean);
         return(buffer.toString());
     }
@@ -98,7 +98,7 @@ public class ZooFoodServer extends ZooEmployee{
 //        this.bean = inputbean;
 //        this.selfBean = outputbean;
 //        this.buffer = new StringBuilder();
-        buffer.append("Zoo Food Server" + this.name + "is serving food.\n");
+        buffer.append("Zoo Food Server " + this.name + " is serving food.\n");
 //        this.ZooFoodServing(bean);
         return(buffer.toString());
     }
