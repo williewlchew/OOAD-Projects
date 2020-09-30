@@ -43,6 +43,7 @@ public abstract class Animal {
         return(this.name);
 
     }
+
     public String GetSpecies() {
         return(this.species);
 
