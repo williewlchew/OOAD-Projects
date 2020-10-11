@@ -1,5 +1,5 @@
 package roll.store;
 
 public interface ICommand {
-    public void make();
+    public void make(Customer customer);
 }

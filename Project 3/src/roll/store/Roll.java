@@ -19,10 +19,11 @@ public class Roll {
 
     public String getDescription(){
         String ret = getType();
+        /*
         if(extras.length > 0){
             ret += " with ";
             // loop through extras
-        }
+        }*/
         return ret;
     }
 

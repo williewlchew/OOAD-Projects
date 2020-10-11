@@ -3,7 +3,7 @@ package roll.store;
 public class ExtraSauce extends Extras {
     Roll roll;
 
-    public ExtraSauce(Roll roll) {
+    public ExtraSauce(Roll roll, String sauceName) {
         this.roll = roll;
     }
 

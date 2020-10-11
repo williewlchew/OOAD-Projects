@@ -1,6 +1,6 @@
 package roll.store;
 
-public class SpringRollCommand {
+public class SpringRollCommand implements ICommand{
 
     private Store store;
     private SpringRollFactory factory;
@@ -9,6 +9,7 @@ public class SpringRollCommand {
         this.store = store;
     }
 
+    @Override
     public void make(Customer customer){
         store.getIngredients("spring");
         Roll newSpringRoll = new Roll(factory);
