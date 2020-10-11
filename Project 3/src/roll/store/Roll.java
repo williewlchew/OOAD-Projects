@@ -6,15 +6,28 @@ public class Roll {
     private  String[] extras;
 
     public Roll(){
-
     }
 
+    public Roll(RollFactory factory){
+        name = factory.getName();
+        cost = factory.getCost();
+    }
+
+    public  String getType() {return name;}
+
+//    public String getExtras() {return extras;}
+
     public String getDescription(){
-        return "";
+        String ret = getType();
+        if(extras.length > 0){
+            ret += " with ";
+            // loop through extras
+        }
+        return ret;
     }
 
     public double getCost(){
-        return 0.0;
+        return cost;
     }
 }
 

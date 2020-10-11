@@ -1,15 +1,7 @@
 package roll.store;
 
 public interface RollFactory {
-    public Roll createRoll();
+    public String getName();
+    public double getCost();
 }
 
-public class SpringRollFactory implements  RollFactory{
-    public SpringRollFactory(){
-
-    }
-
-    public Roll createRoll(){
-        return null;
-    }
-}

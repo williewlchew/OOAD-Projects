@@ -8,7 +8,7 @@ public class ExtraSauce extends Extras {
     }
 
     @Override
-    public String getDescription() {
-        return "";
+    public String getDescription(String sauceName) {
+        return sauceName + " sauce";
     }
 }
