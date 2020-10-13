@@ -1,5 +1,8 @@
 package roll.store;
 
 public interface ICommand {
-    public void make(Customer customer);
+    public void make();
+
+    void make(Roll roll, String sauce);
+    Roll getResult();
 }

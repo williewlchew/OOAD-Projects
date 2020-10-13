@@ -8,6 +8,5 @@ public abstract class Extras extends Roll {
     protected Extras() {
     }
 
-    public abstract String getDescription(String sauceName);
 }
 

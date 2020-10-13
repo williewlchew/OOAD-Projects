@@ -1,14 +1,12 @@
 package roll.store;
 
 public class ExtraSauce extends Extras {
-    Roll roll;
+
 
     public ExtraSauce(Roll roll, String sauceName) {
-        this.roll = roll;
-    }
-
-    @Override
-    public String getDescription(String sauceName) {
-        return sauceName + " sauce";
+        this.name = roll.getType();
+        this.cost = roll.getCost();
+        this.extras = roll.getExtras();
+        this.extras.add(sauceName);
     }
 }

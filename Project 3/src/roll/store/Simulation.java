@@ -30,9 +30,19 @@ public class Simulation {
 
     public String RunSimulation(){
         // prilimenary testing implementation
+
         SpringRollFactory testFactory = new SpringRollFactory();
         Roll testRoll = new Roll(testFactory);
-        return testRoll.getDescription();
+        System.out.println(testRoll.getDescription());
+
+        Roll testRoll2 = storeController.SpringRollSlot();
+        System.out.println(testRoll2.getDescription());
+        testRoll2 = storeController.ExtraSauceSlot(testRoll2, "Sour sauce");
+        System.out.println(testRoll2.getDescription());
+        testRoll2 = storeController.ExtraSauceSlot(testRoll2, "Sweet sauce");
+        System.out.println(testRoll2.getDescription());
+
+        return "exit testing...";
     }
 }
 

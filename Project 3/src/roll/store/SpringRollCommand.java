@@ -4,17 +4,27 @@ public class SpringRollCommand implements ICommand{
 
     private Store store;
     private SpringRollFactory factory;
+    private Roll result;
 
     public SpringRollCommand(Store store){
         this.store = store;
+        this.factory = new SpringRollFactory();
     }
 
     @Override
-    public void make(Customer customer){
+    public void make(){
         store.getIngredients("spring");
         Roll newSpringRoll = new Roll(factory);
+        result = newSpringRoll;
+    }
 
-        // get and apply customer extras
-        // append new roll to customer's bag
+    @Override
+    public void make(Roll roll, String sauce) {
+
+    }
+
+    public Roll getResult()
+    {
+        return result;
     }
 }
