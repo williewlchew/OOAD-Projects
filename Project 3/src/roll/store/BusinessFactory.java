@@ -2,7 +2,7 @@ package roll.store;
 
 import java.util.ArrayList;
 import java.util.List;
-/*
+
 public class BusinessFactory implements CustomerFactory{
 
     public Customer createBusiness() {
@@ -20,4 +20,3 @@ public class BusinessFactory implements CustomerFactory{
         return Rolls;
     }
 }
- */
