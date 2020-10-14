@@ -1,11 +1,11 @@
 package roll.store;
 
-public class ExtraSauceCommand implements ICommand{
+public class ExtraFillingCommand implements ICommand{
 
     private Store store;
     private Roll result;
 
-    public ExtraSauceCommand(Store store){
+    public ExtraFillingCommand(Store store){
         this.store = store;
     }
 
@@ -17,8 +17,8 @@ public class ExtraSauceCommand implements ICommand{
     @Override
     public void make(Roll roll, String sauce){
         store.getIngredients(5);
-        Roll newSaucyRoll = new ExtraSauce(roll, sauce);
-        result = newSaucyRoll;
+        Roll newRoll = new ExtraSauce(roll, sauce);
+        result = newRoll;
     }
 
     public Roll getResult(){
