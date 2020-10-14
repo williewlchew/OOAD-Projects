@@ -1,5 +1,7 @@
 package roll.store;
 
+
+
 public class Simulation {
 
     // Simulation-related
@@ -29,7 +31,7 @@ public class Simulation {
 
 
     public String RunSimulation(){
-        // prilimenary testing implementation
+        // preliminary testing implementation
 
         SpringRollFactory testFactory = new SpringRollFactory();
         Roll testRoll = new Roll(testFactory);
@@ -43,6 +45,17 @@ public class Simulation {
         System.out.println(testRoll2.getDescription());
 
         return "exit testing...";
+    }
+
+
+    public static Roll IntToRoll(int r) {
+        return switch (r) {
+            case 1 -> StoreController.SpringRollSlot();
+            case 2 -> StoreController.EggRollSlot();
+            case 3 -> StoreController.SausageRollSlot();
+            case 4 -> StoreController.PastryRollSlot();
+            case 5 -> StoreController.JellyRollSlot();
+        };
     }
 }
 

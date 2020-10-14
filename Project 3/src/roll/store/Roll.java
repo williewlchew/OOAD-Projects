@@ -17,7 +17,7 @@ public class Roll {
         cost = factory.getCost();
     }
 
-    public  String getType() {return name;}
+    public String getType() {return name;}
 
     public ArrayList<String> getExtras() {return extras;}
 
