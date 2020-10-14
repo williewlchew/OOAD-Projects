@@ -8,13 +8,17 @@ public interface CustomerFactory {
     String getCustomerType();
     List<Integer> Rolls = null;
 
-    static Roll IntToRoll(int r) {
+    List<Integer> createRolls();
+
+
+    static Roll IntToRoll(int r, StoreController sc) throws Exception {
         return switch (r) {
-            case 0 -> StoreController.SpringRollSlot();
-            case 1 -> StoreController.EggRollSlot();
-            case 2 -> StoreController.SausageRollSlot();
-            case 3 -> StoreController.PastryRollSlot();
-            case 4 -> StoreController.JellyRollSlot();
+            case 0 -> sc.SpringRollSlot();
+            case 1 -> sc.EggRollSlot();
+            case 2 -> sc.SausageRollSlot();
+            case 3 -> sc.PastryRollSlot();
+            case 4 -> sc.JellyRollSlot();
+            default -> throw new Exception();
         };
     }
 

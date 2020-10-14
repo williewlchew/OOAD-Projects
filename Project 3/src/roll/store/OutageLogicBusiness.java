@@ -1,5 +1,6 @@
 package roll.store;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class OutageLogicBusiness implements OutageLogicStrategy{
@@ -19,7 +20,8 @@ public abstract class OutageLogicBusiness implements OutageLogicStrategy{
 
         if (FLAG) {
             // No more rolls left, return empty list of rolls
-            return None;
+             List<Integer> NewRolls = new ArrayList<>();
+             return NewRolls;
 
         }
         return Rolls;

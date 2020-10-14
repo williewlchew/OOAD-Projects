@@ -14,31 +14,29 @@ public class StoreController {
         commandSlots[5] = new ExtraSauceCommand(store);
     }
 
-    public static Roll SpringRollSlot(){
-        commandSlots[0].make();
+    public Roll SpringRollSlot(){
+        this.commandSlots[0].make();
         return commandSlots[0].getResult();
     }
-
-    public static Roll EggRollCommandSlot() {
-        commandSlots[1].make();
-        return commandSlots[1].getResult();
+    public Roll EggRollSlot() {
+        this.commandSlots[1].make();
+        return this.commandSlots[1].getResult();
     }
-    public static Roll SausageRollCommandSlot() {
-        commandSlots[2].make();
-        return commandSlots[2].getResult();
+    public Roll SausageRollSlot() {
+        this.commandSlots[2].make();
+        return this.commandSlots[2].getResult();
     }
-    public static Roll PastryRollCommandSlot() {
-        commandSlots[3].make();
-        return commandSlots[3].getResult();
+    public Roll PastryRollSlot() {
+        this.commandSlots[3].make();
+        return this.commandSlots[3].getResult();
     }
-    public static Roll JellyRollCommandSlot() {
-        commandSlots[4].make();
-        return commandSlots[4].getResult();
+    public Roll JellyRollSlot() {
+        this.commandSlots[4].make();
+        return this.commandSlots[4].getResult();
     }
-
     public Roll ExtraSauceSlot(Roll roll, String sauce){
-        commandSlots[5].make(roll, sauce);
-        return commandSlots[5].getResult();
+        this.commandSlots[5].make(roll, sauce);
+        return this.commandSlots[5].getResult();
     }
 
 }

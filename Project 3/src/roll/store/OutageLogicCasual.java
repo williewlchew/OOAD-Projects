@@ -9,30 +9,28 @@ public abstract class OutageLogicCasual implements OutageLogicStrategy {
 
     @Override
     public List<Integer> CheckRolls(List<Integer> Rolls, Store store) {
-        boolean[] FLAGs = new boolean[6];
+        List<Boolean> FLAGs = new ArrayList<Boolean>(5);
         List<Integer> NewRolls = new ArrayList<>();
-
-        Arrays.fill(FLAGs, Boolean.FALSE);
 
         // Iterate over the rolls, check for ones that are out of stock.
         for (int roll: Rolls) {
             int roll_stock = store.getStock(roll);
             if (roll_stock == 0) {
-                FLAGs[roll] = false;
+                FLAGs.set(roll, false);
             }
             else {
-                FLAGs[roll] = true;
+                FLAGs.set(roll, true);
                 NewRolls.add(roll);
             }
         }
-        if (size(NewRolls) < 15) {
+        if ((NewRolls.size() < 15)) {
 
-            for (int i = 0; i < size(FLAGs); i ++) {
-                if (FLAGs[i]) {
+            for (int i = 0; i < FLAGs.size(); i ++) {
+                if (FLAGs.get(i)) {
                     NewRolls.add(i);
                 }
             }
         }
-
+        return NewRolls;
     }
 }
