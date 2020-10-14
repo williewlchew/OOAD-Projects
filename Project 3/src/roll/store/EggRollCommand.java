@@ -1,14 +1,14 @@
 package roll.store;
 
-public class SpringRollCommand implements ICommand{
+public class EggRollCommand implements ICommand{
 
     private Store store;
-    private SpringRollFactory factory;
+    private EggRollFactory factory;
     private Roll result;
 
-    public SpringRollCommand(Store store){
+    public EggRollCommand(Store store){
         this.store = store;
-        this.factory = new SpringRollFactory();
+        this.factory = new EggRollFactory();
     }
 
     @Override

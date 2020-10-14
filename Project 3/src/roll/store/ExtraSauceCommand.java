@@ -17,7 +17,7 @@ public class ExtraSauceCommand implements ICommand{
 
     @Override
     public void make(Roll roll, String sauce){
-        store.getIngredients("sauce");
+        store.getIngredients(5);
         Roll newSaucyRoll = new ExtraSauce(roll, sauce);
         result = newSaucyRoll;
     }

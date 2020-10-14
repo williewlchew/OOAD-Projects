@@ -6,13 +6,14 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/*
 public class CausalFactory implements CustomerFactory{
 
     private Random RollTypeInt = new Random(5);
     private Random RollCountInt = new Random(3);
 
 
-
+/*
     public List<Roll> createRolls() {
 
         // https://stackoverflow.com/questions/56199667/how-do-i-generate-a-list-with-specified-size-of-random-integers-within-a-range-i
@@ -34,3 +35,4 @@ public class CausalFactory implements CustomerFactory{
         return 3;
     }
 }
+*/

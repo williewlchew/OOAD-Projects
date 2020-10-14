@@ -7,6 +7,10 @@ public class StoreController {
     public StoreController(Store store){
         this.store = store;
         commandSlots[0] = new SpringRollCommand(store);
+        commandSlots[1] = new EggRollCommand(store);
+        commandSlots[2] = new SausageRollCommand(store);
+        commandSlots[3] = new PastryRollCommand(store);
+        commandSlots[4] = new JellyRollCommand(store);
         commandSlots[5] = new ExtraSauceCommand(store);
     }
 

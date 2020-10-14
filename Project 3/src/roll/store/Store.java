@@ -5,25 +5,38 @@ public class Store {
     private boolean[] outages;
     private ICommand[] orders;
     private MessageBean selfBean;
+    private char dummy;
 
     public Store(MessageBean bean){
+        ingredients = new int[8];
         selfBean = bean;
+        restock();
+        dummy = '0';
     }
 
-    public void getIngredients(String type){
+    public int getStock(int type){
+        return ingredients[type];
+    }
+
+    public void getIngredients(int type){
         // decrement ingredients corresponding to type
-        selfBean.setMessage(type);
+        ingredients[type] -= 1;
+        selfBean.setMessage((dummy + "-" + type));
+
+        if(dummy == '0') dummy = '1';
+        else if(dummy == '1') dummy = '0';
     }
 
+    //wip
     public void restock(){
         for (int i = 0; i < 5; i++){
-            ingredients[i] = 30;
+            if(ingredients[i] == 0){
+                ingredients[i] = 30;
+                selfBean.setMessage(dummy + "#" + i);
 
-            //reporting temp
-            selfBean.setMessage("restocked");
-
-            // not clear on outages just yet...
-            //if(outages[i]){}
+                if(dummy == '0') dummy = '1';
+                else if(dummy == '1') dummy = '0';
+            }
         }
     }
 

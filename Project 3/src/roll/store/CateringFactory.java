@@ -3,7 +3,7 @@ package roll.store;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+/*
 public class CateringFactory implements CustomerFactory{
 
     private Random RollTypeInt = new Random(5);
@@ -26,3 +26,4 @@ public class CateringFactory implements CustomerFactory{
         return Rolls;
     }
 }
+*/

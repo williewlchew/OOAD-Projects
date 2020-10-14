@@ -21,8 +21,8 @@ public class Simulation {
     public Simulation(int daysToSimulate){
         this.daysToSimulate = daysToSimulate;
 
-        storeBean = new MessageBean();
         simBean = new MessageBean();
+        storeBean = new MessageBean();
 
         store = new Store(storeBean);
         storeController = new StoreController(store);
@@ -32,30 +32,33 @@ public class Simulation {
 
     public String RunSimulation(){
         // preliminary testing implementation
-
-        SpringRollFactory testFactory = new SpringRollFactory();
-        Roll testRoll = new Roll(testFactory);
-        System.out.println(testRoll.getDescription());
-
         Roll testRoll2 = storeController.SpringRollSlot();
         System.out.println(testRoll2.getDescription());
         testRoll2 = storeController.ExtraSauceSlot(testRoll2, "Sour sauce");
         System.out.println(testRoll2.getDescription());
         testRoll2 = storeController.ExtraSauceSlot(testRoll2, "Sweet sauce");
         System.out.println(testRoll2.getDescription());
+        testRoll2 = storeController.ExtraSauceSlot(testRoll2, "Soy sauce");
+        System.out.println(testRoll2.getDescription());
 
+        int[] results = storeObserver.retrieveNewData();
+        for (int i : results){
+            System.out.println(("Data: " + i ));
+        }
         return "exit testing...";
     }
 
-
-    public static Roll IntToRoll(int r) {
+/*
+    public static Roll IntToRoll(int r, StoreController storeController) {
         return switch (r) {
-            case 1 -> StoreController.SpringRollSlot();
-            case 2 -> StoreController.EggRollSlot();
-            case 3 -> StoreController.SausageRollSlot();
-            case 4 -> StoreController.PastryRollSlot();
-            case 5 -> StoreController.JellyRollSlot();
+            case 1 -> storeController.SpringRollSlot();
+            //case 2 -> storeController.EggRollSlot();
+            //case 3 -> storeController.SausageRollSlot();
+            //case 4 -> storeController.PastryRollSlot();
+            //case 5 -> storeController.JellyRollSlot();
+            default -> new Roll();
         };
     }
+ */
 }
 
