@@ -48,17 +48,5 @@ public class Simulation {
         return "exit testing...";
     }
 
-/*
-    public static Roll IntToRoll(int r, StoreController storeController) {
-        return switch (r) {
-            case 1 -> storeController.SpringRollSlot();
-            //case 2 -> storeController.EggRollSlot();
-            //case 3 -> storeController.SausageRollSlot();
-            //case 4 -> storeController.PastryRollSlot();
-            //case 5 -> storeController.JellyRollSlot();
-            default -> new Roll();
-        };
-    }
- */
 }
 

@@ -12,6 +12,8 @@ public class StoreController {
         commandSlots[3] = new PastryRollCommand(store);
         commandSlots[4] = new JellyRollCommand(store);
         commandSlots[5] = new ExtraSauceCommand(store);
+        commandSlots[6] = new ExtraToppingCommand(store);
+        commandSlots[7] = new ExtraFillingCommand(store);
     }
 
     public Roll SpringRollSlot(){
@@ -39,4 +41,13 @@ public class StoreController {
         return this.commandSlots[5].getResult();
     }
 
+    public Roll ExtraToppingSlot(Roll roll, String sauce){
+        this.commandSlots[6].make(roll, sauce);
+        return this.commandSlots[6].getResult();
+    }
+
+    public Roll ExtraFillingSlot(Roll roll, String sauce){
+        this.commandSlots[7].make(roll, sauce);
+        return this.commandSlots[7].getResult();
+    }
 }

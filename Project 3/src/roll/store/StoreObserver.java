@@ -56,6 +56,12 @@ public class StoreObserver {
                 case(5):
                     sauceSold[currentDay] += 1;
                     break;
+                case(6):
+                    toppingsSold[currentDay] += 1;
+                    break;
+                case(7):
+                    fillingSold[currentDay] += 1;
+                    break;
             }
         }
         else if (buffer.charAt(0) == '#'){

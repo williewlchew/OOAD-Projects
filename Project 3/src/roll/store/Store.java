@@ -8,7 +8,7 @@ public class Store {
     private char dummy;
 
     public Store(MessageBean bean){
-        ingredients = new int[8];
+        ingredients = new int[5];
         selfBean = bean;
         restock();
         dummy = '0';
