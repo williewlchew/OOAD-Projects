@@ -8,24 +8,20 @@ import java.util.stream.IntStream;
 
 public class CausalFactory implements CustomerFactory{
 
-    private final Random RollTypeInt = new Random();
-    private final Random RollCountInt = new Random();
+    CasualCustomerStrategy strat = new CasualCustomerStrategy();
 
-    public List<Integer> createRolls() {
-
-        // https://stackoverflow.com/questions/56199667/how-do-i-generate-a-list-with-specified-size-of-random-integers-within-a-range-i
-        List<Integer> RollInts = IntStream.range(0, this.getRollMax()).mapToObj(i -> this.RollTypeInt.nextInt(getRollTypeMax()) + 1).collect(Collectors.toList());
-        return RollInts;
-    }
-
+    @Override
     public String getCustomerType() {
         return "casual";
     }
 
-    public int getRollMax(){
-        return 3;
+    @Override
+    public StrategyContext getStrat() {
+        return strat;
     }
-    public int getRollTypeMax() {
+
+    @Override
+    public int getRollMax() {
         return 3;
     }
 }

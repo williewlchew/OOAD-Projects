@@ -39,6 +39,16 @@ public class Store {
         }
     }
 
+    public int WhatsLeft(){
+        for (int i = 0; i < 5; i++){
+            if(ingredients[i] > 0){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
     public boolean CheckClose(){
         boolean closed = true;
         for (int i = 0; i < 5; i++){

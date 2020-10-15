@@ -52,41 +52,27 @@ public class Simulation {
 
     public String RunSimulation()
     {
-
-        StrategyContext contextCasual = new StrategyContext(new OutageLogicCasual());
-        StrategyContext contextBusiness = new StrategyContext(new OutageLogicBusiness());
-        StrategyContext contextCatering = new StrategyContext(new OutageLogicCatering());
         for (this.day = 0; day < this.daysToSimulate; day++) {
             // Customer logic
-            List<Customer> Customers = GenerateCustomers();
-            List<Integer> rolls2 = new ArrayList<>();
+            List<Customer> customers = GenerateCustomers();
 
-            for (Customer c: Customers){
-                if (c.CustomerType.equals("Casual")) {
-                    rolls2 = contextCasual.ExecuteStrategy(c.rolls, store);
-                }
-                if (c.CustomerType.equals("Business")) {
-                    rolls2 = contextBusiness.ExecuteStrategy(c.rolls, store);
-                }
-                if (c.CustomerType.equals("Catering")) {
-                    rolls2 = contextCatering.ExecuteStrategy(c.rolls, store);
-                }
+            for (int i = 0 ; i < customers.size(); i++){
+                Customer c = customers.get(i);
 
-                System.out.println(rolls2);
-                for (int r: rolls2) {
-                    Roll roll = TakeOrders(r);
-                    Roll roll2 = AddExtras(roll);
-                    c.Rolls.add(roll2);
-                    System.out.println(roll2.name);
+                String s = "";
+                for (int element: c.GetOrder()) {
+                    s += element;
                 }
-
+                System.out.println(s);
             }
 
             // End of day outputting
+            buffer.append("---Day " + day + "---\n");
             buffer.append(storeObserver.retrieveNewData());
+            buffer.append("--- End of Day " + day + "---\n\n");
 
         }
-
+        buffer.append("---Totals---\n");
         buffer.append(storeObserver.retrieveSumData());
         return buffer.toString();
     }
@@ -138,16 +124,21 @@ public class Simulation {
         int CasualCount = CasualCustomerCount.nextInt(11) + 1;
         int BusinessCount = BusinessCustomerCount.nextInt(2) + 1;
         int CateringCount = CateringCustomerCount.nextInt(3) + 1;
+
+        CausalFactory casualFactory = new CausalFactory();
+        BusinessFactory businessFactory = new BusinessFactory();
+        CateringFactory cateringFactory = new CateringFactory();
+
         List<Customer> Customers = new ArrayList<>();
 
         for (int i = 0; i < CasualCount; i++){
-            Customers.add(new Customer(new CausalFactory()));
+            Customers.add(new Customer(casualFactory));
         }
         for (int i = 0; i < BusinessCount; i++){
-            Customers.add(new Customer(new BusinessFactory()));
+            Customers.add(new Customer(businessFactory));
         }
         for (int i = 0; i < CateringCount; i++){
-            Customers.add(new Customer(new CateringFactory()));
+            Customers.add(new Customer(cateringFactory));
         }
         Collections.shuffle(Customers);
         return Customers;

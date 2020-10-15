@@ -5,20 +5,35 @@ import java.util.List;
 
 public class Customer {
     //temporary for testing
-    public List<Integer> rolls;
-    public List<Roll> Rolls = new ArrayList<>();
+    private Roll[] rolls;
+    private int[] order;
+    private StrategyContext strat;
+
     int RollMax;
-    int RollTypeMax;
     int currentRoll;
     String CustomerType;
 
     public Customer(CustomerFactory factory){
-
-        this.RollMax = factory.getRollMax();
-        this.RollTypeMax = factory.getRollTypeMax();
         this.CustomerType = factory.getCustomerType();
-        this.rolls = factory.createRolls();
+        this.RollMax = factory.getRollMax();
+
+        // Strategy setting
+        this.strat = factory.getStrat();
+        this.order = strat.BuildOrder();
 
         currentRoll = 0;
     }
+
+    public int[] GetOrder(){
+        return order;
+    }
+
+    public int GetOutage(){
+        return strat.Outage();
+    }
+
+    public Roll[] GetRolls(){
+        return rolls;
+    }
+
 }
