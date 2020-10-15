@@ -51,10 +51,13 @@ public class Simulation {
         buffer = new StringBuilder();
     }
 
-
+    // run simulation
     public String RunSimulation()
     {
         for (this.day = 0; day < this.daysToSimulate; day++) {
+
+            System.out.println("---Day " + day + "---\n");
+            
             // Start of day logic
             store.restock();
 
@@ -87,6 +90,7 @@ public class Simulation {
             buffer.append("---Day " + day + "---\n");
             buffer.append(storeObserver.retrieveNewData());
             buffer.append("--- End of Day " + day + "---\n\n");
+            System.out.println("---End of Day " + day + "---\n");
 
             // End of day logic
             if(dummy == '0') dummy = '1';
@@ -99,6 +103,7 @@ public class Simulation {
         return buffer.toString();
     }
 
+    // RunSimulation helpers
     private Roll[] ServeCustomer(int[] order, int outage){
         Roll[] ret = new Roll[order.length];
         boolean servable = true;

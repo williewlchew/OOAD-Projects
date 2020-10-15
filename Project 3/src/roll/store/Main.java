@@ -11,7 +11,6 @@ public class Main {
 
         Simulation sim = new Simulation(7);
         String buffer = sim.RunSimulation();
-        System.out.println(buffer);
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("simulation.out"))) {
             writer.write(buffer);
