@@ -19,6 +19,7 @@ public class StoreObserver {
     private int[] sauceSold;
     private int[] fillingSold;
     private int[] toppingsSold;
+    private double[] profit;
 
     private int currentDay = 0;
     private int maxDay = 0;
@@ -27,50 +28,52 @@ public class StoreObserver {
     private final PropertyChangeListener SimulationListener = (e -> {
         buffer = (String) e.getNewValue();
         if(buffer.equals("day")){
+            calculateProfit();
             currentDay += 1;
         }
     });
 
     private final PropertyChangeListener StoreListener = (e -> {
         buffer = (String) e.getNewValue();
-        int c = Integer.parseInt(buffer.substring(2));
-        //System.out.println(buffer);
+
         if(buffer.charAt(1) == '-'){
-            switch(c)
-            {
-                case(0):
-                    springRollsSold[currentDay] += 1;
-                    break;
-                case(1):
-                    eggRollsSold[currentDay] += 1;
-                    break;
-                case(2):
-                    sausageRollsSold[currentDay] += 1;
-                    break;
-                case(3):
-                    pastryRollsSold[currentDay] += 1;
-                    break;
-                case(4):
-                    jellyRollsSold[currentDay] += 1;
-                    break;
-                case(5):
-                    sauceSold[currentDay] += 1;
-                    break;
-                case(6):
-                    toppingsSold[currentDay] += 1;
-                    break;
-                case(7):
-                    fillingSold[currentDay] += 1;
-                    break;
+            int c = Integer.parseInt(buffer.substring(2));
+            switch (c) {
+                case (0) -> springRollsSold[currentDay] += 1;
+                case (1) -> eggRollsSold[currentDay] += 1;
+                case (2) -> sausageRollsSold[currentDay] += 1;
+                case (3) -> pastryRollsSold[currentDay] += 1;
+                case (4) -> jellyRollsSold[currentDay] += 1;
+                case (5) -> sauceSold[currentDay] += 1;
+                case (6) -> toppingsSold[currentDay] += 1;
+                case (7) -> fillingSold[currentDay] += 1;
             }
         }
-        else if (buffer.charAt(0) == '#'){
-            switch (c)
-            {
-                //restocking
+        else if (buffer.charAt(1) == '+'){
+            int c = Integer.parseInt(String.valueOf(buffer.charAt(2)));
+            switch (c) {
+                case (0) -> springRollsLeft[currentDay] = Integer.parseInt(buffer.substring(4));
+                case (1) -> eggRollsLeft[currentDay] = Integer.parseInt(buffer.substring(4));
+                case (2) -> sausageRollsLeft[currentDay] += Integer.parseInt(buffer.substring(4));
+                case (3) -> pastryRollsLeft[currentDay] += Integer.parseInt(buffer.substring(4));
+                case (4) -> jellyRollsLeft[currentDay] += Integer.parseInt(buffer.substring(4));
             }
         }
     });
+
+    private void calculateProfit()
+    {
+        double profits  = 0;
+        profits += springRollsSold[currentDay] * 1.0;
+        profits += eggRollsSold[currentDay] * 1.5;
+        profits += sausageRollsSold[currentDay] * 2.5;
+        profits += pastryRollsSold[currentDay] * 3.0;
+        profits += jellyRollsSold[currentDay] * 2.0;
+        profits += sauceSold[currentDay] * 0.25;
+        profits += toppingsSold[currentDay] * 0.50;
+        profits += fillingSold[currentDay] * 0.75;
+        profit[currentDay] = profits;
+    }
 
     public StoreObserver(MessageBean bean1, MessageBean bean2, int numberOfDays){
         simulationBean = bean1;
@@ -101,15 +104,28 @@ public class StoreObserver {
         fillingSold[0] = 0;
         toppingsSold = new int[maxDay];
         toppingsSold[0] = 0;
+        profit = new double[maxDay];
     }
 
-    public int[] retrieveNewData(){
-        int[] ret = {springRollsSold[currentDay],
-                eggRollsSold[currentDay],
-                sausageRollsSold[currentDay],
-                pastryRollsSold[currentDay],
-                jellyRollsSold[currentDay],
-                sauceSold[currentDay]};
+    public String retrieveNewData(){
+
+        calculateProfit();
+        String ret = "";
+        ret += "Spring rolls sold today: " + springRollsSold[currentDay] + "\n";
+        ret += "Egg rolls sold today: " + eggRollsSold[currentDay] + "\n";
+        ret += "Sausage rolls sold today: " + sausageRollsSold[currentDay] + "\n";
+        ret += "Pastry rolls sold today: " + pastryRollsSold[currentDay] + "\n";
+        ret += "Jelly rolls sold today: " + jellyRollsSold[currentDay] + "\n";
+        ret += "Extra sauce sold today: " + sauceSold[currentDay] + "\n";
+        ret += "Extra topping sold today: " + toppingsSold[currentDay] + "\n";
+        ret += "Sausage filling sold today: " + fillingSold[currentDay] + "\n";
+        ret += "The store made $" + profit[currentDay] + " today.\n";
+        ret += "Spring rolls left today: " + springRollsLeft[currentDay] + "\n";
+        ret += "Egg rolls left today: " + eggRollsLeft[currentDay] + "\n";
+        ret += "Sausage rolls left today: " + sausageRollsLeft[currentDay] + "\n";
+        ret += "Pastry rolls left today: " + pastryRollsLeft[currentDay] + "\n";
+        ret += "Jelly rolls left today: " + jellyRollsLeft[currentDay] + "\n";
+
         return(ret);
     }
 }

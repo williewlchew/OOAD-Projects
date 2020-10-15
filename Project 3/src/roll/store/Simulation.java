@@ -32,6 +32,10 @@ public class Simulation {
 
     public String RunSimulation(){
         // preliminary testing implementation
+        System.out.println("Before restock: " + store.getStock(0));
+        store.restock();
+        System.out.println("After restock: " + store.getStock(0));
+
         Roll testRoll2 = storeController.SpringRollSlot();
         System.out.println(testRoll2.getDescription());
         testRoll2 = storeController.ExtraSauceSlot(testRoll2, "Sour sauce");
@@ -41,10 +45,9 @@ public class Simulation {
         testRoll2 = storeController.ExtraSauceSlot(testRoll2, "Soy sauce");
         System.out.println(testRoll2.getDescription());
 
-        int[] results = storeObserver.retrieveNewData();
-        for (int i : results){
-            System.out.println(("Data: " + i ));
-        }
+        store.Close();
+        System.out.println(storeObserver.retrieveNewData());
+
         return "exit testing...";
     }
 

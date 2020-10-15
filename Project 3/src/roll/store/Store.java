@@ -8,9 +8,8 @@ public class Store {
     private char dummy;
 
     public Store(MessageBean bean){
-        ingredients = new int[5];
+        ingredients = new int[8];
         selfBean = bean;
-        restock();
         dummy = '0';
     }
 
@@ -27,7 +26,6 @@ public class Store {
         else if(dummy == '1') dummy = '0';
     }
 
-    //wip
     public void restock(){
         for (int i = 0; i < 5; i++){
             if(ingredients[i] == 0){
@@ -40,11 +38,24 @@ public class Store {
         }
     }
 
-    public boolean isClosed(){
-        boolean closed = false;
+    public boolean CheckClose(){
+        boolean closed = true;
         for (int i = 0; i < 5; i++){
-            closed = (closed | outages[i]);
+            if(ingredients[i] > 0){
+                closed = false;
+                break;
+            }
         }
+        Close();
         return closed;
+    }
+
+    public void Close(){
+        for (int i = 0; i < 5; i++){
+            selfBean.setMessage(dummy + "+" + i + "+" + ingredients[i]);
+
+            if(dummy == '0') dummy = '1';
+            else if(dummy == '1') dummy = '0';
+        }
     }
 }
