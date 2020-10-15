@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class OutageLogicCasual implements OutageLogicStrategy {
+public class OutageLogicCasual implements OutageLogicStrategy {
 
     @Override
     public List<Integer> CheckRolls(List<Integer> Rolls, Store store) {

@@ -3,7 +3,7 @@ package roll.store;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class OutageLogicBusiness implements OutageLogicStrategy{
+public class OutageLogicBusiness implements OutageLogicStrategy{
 
     @Override
     public List<Integer> CheckRolls(List<Integer> Rolls, Store store) {
