@@ -39,16 +39,8 @@ public class Simulation {
     }
 
 
-    public String RunSimulation(){
-        // preliminary testing implementation
-//        Roll testRoll2 = storeController.SpringRollSlot();
-//        System.out.println(testRoll2.getDescription());
-//        testRoll2 = storeController.ExtraSauceSlot(testRoll2, "Sour sauce");
-//        System.out.println(testRoll2.getDescription());
-//        testRoll2 = storeController.ExtraSauceSlot(testRoll2, "Sweet sauce");
-//        System.out.println(testRoll2.getDescription());
-//        testRoll2 = storeController.ExtraSauceSlot(testRoll2, "Soy sauce");
-//        System.out.println(testRoll2.getDescription());
+    public String RunSimulation()
+    {
 
         for (this.day = 0; day < this.daysToSimulate; day ++) {
             List<Customer> Customers = GenerateCustomers();
@@ -59,14 +51,34 @@ public class Simulation {
 
         }
 
-//
-//        int[] results = storeObserver.retrieveNewData();
-//        for (int i : results){
-//            System.out.println(("Data: " + i ));
-//        }
+
+
         return "exit testing...";
     }
 
+    private Roll TakeOrders(int type){
+        Roll ret;
+        switch (type) {
+            case (0) -> ret = storeController.SpringRollSlot();
+            case (1) -> ret = storeController.EggRollSlot();
+            case (2) -> ret = storeController.SausageRollSlot();
+            case (3) -> ret = storeController.PastryRollSlot();
+            case (4) -> ret = storeController.JellyRollSlot();
+            default -> ret = new Roll();
+        }
+        return ret;
+    }
+
+    private Roll TakeExtraOrders(Roll roll, int type, String extraName){
+        Roll ret = roll;
+        switch (type) {
+            case (5) ->ret = storeController.ExtraSauceSlot(roll, extraName);
+            case (6) ->ret = storeController.ExtraToppingSlot(roll, extraName);
+            case (7) ->ret = storeController.ExtraFillingSlot(roll, extraName);
+            default -> ret = ret;
+        }
+        return ret;
+    }
 
     public List<Customer> GenerateCustomers(){
         int CasualCount = CasualCustomerCount.nextInt(11) + 1;

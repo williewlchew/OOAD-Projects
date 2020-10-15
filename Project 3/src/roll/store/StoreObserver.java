@@ -128,4 +128,35 @@ public class StoreObserver {
 
         return(ret);
     }
+
+    private int reduceSum(int[] list){
+        int acc = 0;
+        for (int i : list){
+            acc += i;
+        }
+        return acc;
+    }
+
+    private double reduceSum(double[] list){
+        double acc = 0;
+        for (double i : list){
+            acc += i;
+        }
+        return acc;
+    }
+
+    public String retrieveSumData() {
+        String ret = "";
+        ret += "Spring rolls sold total: " + reduceSum(springRollsSold) + "\n";
+        ret += "Egg rolls sold total: " + reduceSum(eggRollsSold) + "\n";
+        ret += "Sausage rolls sold total: " + reduceSum(sausageRollsSold) + "\n";
+        ret += "Pastry rolls sold total: " + reduceSum(pastryRollsSold) + "\n";
+        ret += "Jelly rolls sold total: " + reduceSum(jellyRollsSold) + "\n";
+        ret += "Extra sauce sold total: " + reduceSum(sauceSold) + "\n";
+        ret += "Extra topping sold total: " + reduceSum(toppingsSold) + "\n";
+        ret += "Sausage filling sold total: " + reduceSum(fillingSold) + "\n";
+        ret += "The store made $" + reduceSum(profit) + " total.\n";
+
+        return(ret);
+    }
 }
