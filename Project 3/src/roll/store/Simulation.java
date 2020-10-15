@@ -28,6 +28,9 @@ public class Simulation {
     private StoreController storeController;
     private StoreObserver storeObserver;
 
+    // Output related
+    private StringBuilder buffer;
+
     // Extras
     List<String> Sauces = Lists.newArrayList("Sour Sauce", "Spicy Sauce", "Fire Sauce", "Jelly Sauce", "Mike's Hard Lemonade Sauce");
     List<String> Toppings = Lists.newArrayList("Fruit Topping", "Vegetables Topping", "Chocolate Topping", "Sprinkles Topping");
@@ -42,6 +45,8 @@ public class Simulation {
         store = new Store(storeBean);
         storeController = new StoreController(store);
         storeObserver = new StoreObserver(simBean, storeBean, daysToSimulate);
+
+        buffer = new StringBuilder();
     }
 
 
@@ -52,6 +57,7 @@ public class Simulation {
         StrategyContext contextBusiness = new StrategyContext(new OutageLogicBusiness());
         StrategyContext contextCatering = new StrategyContext(new OutageLogicCatering());
         for (this.day = 0; day < this.daysToSimulate; day++) {
+            // Customer logic
             List<Customer> Customers = GenerateCustomers();
             List<Integer> rolls2 = new ArrayList<>();
 
@@ -76,8 +82,13 @@ public class Simulation {
 
             }
 
+            // End of day outputting
+            buffer.append(storeObserver.retrieveNewData());
+
         }
-        return "exit testing...";
+
+        buffer.append(storeObserver.retrieveSumData());
+        return buffer.toString();
     }
 
     private Roll TakeOrders(int type){
