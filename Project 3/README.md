@@ -6,6 +6,10 @@ The program is intended to be complied and ran in IntelleJ. Open the "Project 3"
 and build the Main.java. IntelleJ should then allow you to run the main. 
 Program was developed in Java.
 
+# Testing
+There are test cases to test the functionality of various aspects of the program. In IntelliJ, press
+Control+Shift+F10 to run all the test cases to ensure that all cases pass before running the main.
+
 # Goal of program
 This program simulates the interaction between a store and custormers. The simulated store sells various
 types of rolls with the options of extra sauce, filling, or toppings for each type of roll. There are three
