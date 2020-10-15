@@ -10,6 +10,7 @@ public class Store {
     public Store(MessageBean bean){
         ingredients = new int[8];
         selfBean = bean;
+        restock();
         dummy = '0';
     }
 

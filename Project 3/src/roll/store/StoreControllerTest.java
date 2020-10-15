@@ -26,4 +26,11 @@ public class StoreControllerTest {
         assertEquals("Pastry Roll with Sour sauce, Colorful toppings, ", testRoll2.getDescription());
         assertEquals(4.00, testRoll2.getCost());
     }
+
+    @Test
+    public void CheckCustomer1() {
+        Customer cust1 = new Customer(new BusinessFactory());
+        assertEquals("Business", cust1.CustomerType);
+    }
+
 }
