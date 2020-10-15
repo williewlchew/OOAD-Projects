@@ -2,7 +2,7 @@ package roll.store;
 
 public class ExtraFilling extends Extras {
 
-    double cost = 0.50;
+    double cost = 0.75;
 
     public ExtraFilling(Roll roll, String name) {
         this.name = roll.getType();
