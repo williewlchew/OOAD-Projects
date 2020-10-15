@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public abstract class BusinessFactory implements CustomerFactory{
+public class BusinessFactory implements CustomerFactory{
 
 
     private Random RollTypeInt = new Random(5);
