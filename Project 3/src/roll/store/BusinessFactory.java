@@ -3,19 +3,28 @@ package roll.store;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+
 
 public class BusinessFactory implements CustomerFactory{
 
 
-    private Random RollTypeInt = new Random(5);
-    private Random RollCountInt = new Random(3);
+    private Random RollTypeInt = new Random();
+    private Random RollCountInt = new Random();
 
     public List<Integer> createRolls() {
-        List<Integer> RollInts = IntStream.range(1, RollCountInt.nextInt(this.getRollMax()) + 1).mapToObj(i -> this.RollTypeInt.nextInt(getRollTypeMax()) + 1).collect(Collectors.toList());
+        List<Integer> RollInts = new ArrayList<>();
+        int r1 = RollTypeInt.nextInt(5);
+        int r2 = RollTypeInt.nextInt(5);
+        while (r1 == r2){
+            r2 = RollTypeInt.nextInt(5);
+        }
+        for (int i = 0; i < getRollMax() / getRollTypeMax(); i++) {
+            RollInts.add(r1);
+        }
+        for(int i = 0; i < getRollMax() / getRollTypeMax(); i++) {
+            RollInts.add(r2);
+        }
 
-//        List<Roll> Rolls = RollInts.forEach(CustomerFactory::IntToRoll).collect(Collectors.toList());
         return RollInts;
     }
 
