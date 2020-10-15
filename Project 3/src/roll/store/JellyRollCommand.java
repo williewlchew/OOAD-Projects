@@ -13,7 +13,7 @@ public class JellyRollCommand implements ICommand{
 
     @Override
     public void make(){
-        store.getIngredients(0);
+        store.getIngredients(4);
         Roll newRoll = new Roll(factory);
         result = newRoll;
     }

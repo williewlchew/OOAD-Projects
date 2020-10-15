@@ -10,7 +10,6 @@ public class Store {
     public Store(MessageBean bean){
         ingredients = new int[8];
         selfBean = bean;
-        restock();
         dummy = '0';
     }
 
@@ -39,16 +38,6 @@ public class Store {
         }
     }
 
-    public int WhatsLeft(){
-        for (int i = 0; i < 5; i++){
-            if(ingredients[i] > 0){
-                return i;
-            }
-        }
-        return -1;
-    }
-
-
     public boolean CheckClose(){
         boolean closed = true;
         for (int i = 0; i < 5; i++){
@@ -57,7 +46,9 @@ public class Store {
                 break;
             }
         }
-        Close();
+        if(closed == true){
+            Close();
+        }
         return closed;
     }
 

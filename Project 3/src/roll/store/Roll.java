@@ -29,7 +29,6 @@ public class Roll {
                 ret += i + ", ";
             }
         }
-        System.out.println(extras.size());
         return ret;
     }
 

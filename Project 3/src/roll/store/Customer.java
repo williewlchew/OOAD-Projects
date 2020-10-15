@@ -8,9 +8,8 @@ public class Customer {
     private Roll[] rolls;
     private int[] order;
     private StrategyContext strat;
+    private int RollMax;
 
-    int RollMax;
-    int currentRoll;
     String CustomerType;
 
     public Customer(CustomerFactory factory){
@@ -20,16 +19,26 @@ public class Customer {
         // Strategy setting
         this.strat = factory.getStrat();
         this.order = strat.BuildOrder();
+    }
 
-        currentRoll = 0;
+    public String GetType(){
+        return CustomerType;
     }
 
     public int[] GetOrder(){
         return order;
     }
 
+    public int GetMax(){
+        return RollMax;
+    }
+
     public int GetOutage(){
         return strat.Outage();
+    }
+
+    public void RecieveRolls(Roll[] rolls){
+        this.rolls = rolls;
     }
 
     public Roll[] GetRolls(){

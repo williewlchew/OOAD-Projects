@@ -27,7 +27,7 @@ public class StoreObserver {
 
     private final PropertyChangeListener SimulationListener = (e -> {
         buffer = (String) e.getNewValue();
-        if(buffer.equals("day")){
+        if(buffer.substring(1).equals("day")){
             calculateProfit();
             currentDay += 1;
         }

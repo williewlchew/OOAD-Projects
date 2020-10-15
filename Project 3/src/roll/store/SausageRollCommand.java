@@ -13,7 +13,7 @@ public class SausageRollCommand implements ICommand{
 
     @Override
     public void make(){
-        store.getIngredients(0);
+        store.getIngredients(2);
         Roll newRoll = new Roll(factory);
         result = newRoll;
     }

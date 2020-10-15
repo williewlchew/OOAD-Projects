@@ -13,7 +13,7 @@ public class EggRollCommand implements ICommand{
 
     @Override
     public void make(){
-        store.getIngredients(0);
+        store.getIngredients(1);
         Roll newRoll = new Roll(factory);
         result = newRoll;
     }
