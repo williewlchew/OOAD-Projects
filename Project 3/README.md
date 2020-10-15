@@ -10,6 +10,12 @@ Program was developed in Java.
 There are test cases to test the functionality of various aspects of the program. In IntelliJ, press
 Control+Shift+F10 to run all the test cases to ensure that all cases pass before running the main.
 
+# Outputting
+A simulation.out file should be made at the end of the program's run. The file should contain the
+inventory data, sales data, and profits of each day along with the totals of the time interval at
+the end. 
+The program will output to the system data about the various rolls that each customer ordered.
+
 # Goal of program
 This program simulates the interaction between a store and custormers. The simulated store sells various
 types of rolls with the options of extra sauce, filling, or toppings for each type of roll. There are three
